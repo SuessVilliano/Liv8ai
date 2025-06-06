@@ -38,16 +38,25 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            {/* Modern abstract AI visualization */}
-            <div className="relative h-96 bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-background/20 to-card/20"></div>
-              <div className="absolute top-8 left-8 w-12 h-12 bg-primary rounded-full opacity-60 animate-pulse-slow"></div>
-              <div className="absolute top-16 right-12 w-8 h-8 bg-primary/80 rounded-full opacity-40 animate-pulse-slow [animation-delay:1s]"></div>
-              <div className="absolute bottom-12 left-12 w-16 h-16 bg-primary/30 rounded-full opacity-50 animate-pulse-slow [animation-delay:2s]"></div>
-              <div className="absolute bottom-8 right-8 w-6 h-6 bg-primary/80 rounded-full opacity-70 animate-pulse-slow [animation-delay:0.5s]"></div>
+            {/* AI Brain Visualization */}
+            <div className="relative h-96 ai-gradient rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 circuit-pattern opacity-20"></div>
+              
+              {/* Floating AI elements */}
+              <div className="absolute top-8 left-8 w-12 h-12 bg-cyan-400 rounded-full pulse-glow animate-bounce [animation-delay:0s]"></div>
+              <div className="absolute top-16 right-12 w-8 h-8 bg-cyan-300 rounded-full pulse-glow animate-bounce [animation-delay:1s]"></div>
+              <div className="absolute bottom-12 left-12 w-16 h-16 bg-cyan-500 rounded-full pulse-glow animate-bounce [animation-delay:2s]"></div>
+              <div className="absolute bottom-8 right-8 w-6 h-6 bg-cyan-200 rounded-full pulse-glow animate-bounce [animation-delay:0.5s]"></div>
+              
+              {/* Central AI brain with circuit patterns */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-6xl text-primary/60">
-                  <Brain className="h-24 w-24" />
+                <div className="relative">
+                  <Brain className="h-32 w-32 text-cyan-400 pulse-glow" />
+                  {/* Connecting lines */}
+                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-cyan-400 transform -translate-x-1/2 -translate-y-1/2 rotate-45 animate-pulse"></div>
+                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-cyan-400 transform -translate-x-1/2 -translate-y-1/2 -rotate-45 animate-pulse [animation-delay:0.5s]"></div>
+                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-cyan-400 transform -translate-x-1/2 -translate-y-1/2 animate-pulse [animation-delay:1s]"></div>
+                  <div className="absolute top-1/2 left-1/2 w-0.5 h-24 bg-cyan-400 transform -translate-x-1/2 -translate-y-1/2 animate-pulse [animation-delay:1.5s]"></div>
                 </div>
               </div>
             </div>

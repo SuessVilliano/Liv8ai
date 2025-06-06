@@ -44,8 +44,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
+            <div className="relative">
+              {/* Circular logo inspired by your original design */}
+              <div className="w-12 h-12 relative mr-3">
+                <div className="absolute inset-0 rounded-full border-2 border-cyan-400 animate-spin [animation-duration:8s]"></div>
+                <div className="absolute inset-1 rounded-full border border-cyan-300 animate-spin [animation-duration:6s] [animation-direction:reverse]"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-cyan-400 font-bold text-lg">8</span>
+                </div>
+              </div>
+            </div>
             <div className="font-bold text-2xl">
-              LIV8<span className="gradient-text">AI</span>
+              LIV<span className="gradient-text">8AI</span>
             </div>
           </div>
 

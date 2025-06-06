@@ -14,20 +14,20 @@ export default function Projects() {
     {
       title: "Smart City Solutions",
       description: "Integrated AI systems for traffic optimization, energy management, and public safety enhancement across metropolitan areas.",
-      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      alt: "Smart city with interconnected systems and digital infrastructure",
+      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      alt: "Futuristic smart city with AI-powered infrastructure and glowing digital networks",
     },
     {
-      title: "Energy Efficiency Solutions", 
-      description: "AI-powered energy optimization systems reducing consumption by 35% while maintaining optimal performance levels.",
-      image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      alt: "Solar panels and wind turbines in a sustainable energy facility",
+      title: "Neural Network Systems", 
+      description: "Advanced deep learning architectures powering next-generation AI applications with unprecedented accuracy and efficiency.",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      alt: "Abstract visualization of neural network connections with glowing nodes and pathways",
     },
     {
-      title: "AI in Education",
-      description: "Personalized learning platforms using AI to adapt curriculum delivery and improve student engagement by 60%.",
-      image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", 
-      alt: "Students using laptops and tablets in a modern technology-enhanced classroom",
+      title: "Robotic Process Automation",
+      description: "Intelligent automation systems that learn and adapt, transforming business operations and reducing manual workload by 80%.",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", 
+      alt: "Futuristic robotic arms and AI systems working in a high-tech automated facility",
     },
   ];
 

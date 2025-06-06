@@ -16,9 +16,15 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
-              <Brain className="h-8 w-8 text-primary mr-2" />
+              <div className="w-10 h-10 relative mr-3">
+                <div className="absolute inset-0 rounded-full border-2 border-cyan-400 animate-spin [animation-duration:8s]"></div>
+                <div className="absolute inset-1 rounded-full border border-cyan-300 animate-spin [animation-duration:6s] [animation-direction:reverse]"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-cyan-400 font-bold">8</span>
+                </div>
+              </div>
               <span className="text-3xl font-bold">
-                LIV8<span className="gradient-text">AI</span>
+                LIV<span className="gradient-text">8AI</span>
               </span>
             </div>
             <p className="text-muted-foreground mb-6 text-lg leading-relaxed max-w-md">
