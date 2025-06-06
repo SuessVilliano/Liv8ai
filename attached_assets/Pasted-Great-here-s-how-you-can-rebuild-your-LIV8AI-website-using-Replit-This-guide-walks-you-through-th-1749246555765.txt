@@ -1,0 +1,235 @@
+Great — here’s how you can rebuild your LIV8AI website using Replit. This guide walks you through the complete setup, file structure, and deployment using HTML, CSS, and JavaScript (or a web framework if you choose to scale later).
+
+⸻
+
+✅ Step-by-Step Instructions to Rebuild LIV8AI Website on Replit
+
+1. Create a New Replit Project
+	•	Go to https://replit.com
+	•	Click + Create Repl
+	•	Choose “HTML, CSS, JS”
+	•	Name your project (e.g., LIV8AI-Website)
+	•	Click Create Repl
+
+⸻
+
+2. File Structure (Inside Replit)
+
+LIV8AI-Website/
+│
+├── index.html         # Main landing page
+├── about.html         # About Us
+├── services.html      # Services overview
+├── service-detail.html# Individual service detail
+├── projects.html      # AI Project Gallery
+├── blog.html          # Blog landing
+├── contact.html       # Contact Us / Book a Call
+├── careers.html       # Job Listings
+├── privacy.html       # Privacy Policy
+│
+├── css/
+│   └── style.css      # All your styles
+│
+├── js/
+│   └── main.js        # Animations / scripts
+│
+└── assets/
+    ├── images/        # Icons, logos, backgrounds
+    └── fonts/         # Custom fonts
+
+
+⸻
+
+3. Paste Your Content into index.html
+
+Below is a cleaned-up starter version using your text. You can expand this with full HTML sections later.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIV8AI - Where Data Meets Intelligence</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Where Data Meets Intelligence</h1>
+  <p>Welcome to our AI-driven agency, where innovation meets precision, and we transform your data into actionable insights that drive success.</p>
+  <a href="contact.html" class="cta-button">Let’s Talk</a>
+</header>
+
+<section id="expertise">
+  <h2>Our Expertise</h2>
+  <ul>
+    <li>Machine Learning – Development of algorithms and statistical models</li>
+    <li>NLP – Transforming language for smarter data insights and communication</li>
+    <li>Computer Vision – Empowering machines through visual data</li>
+    <li>AI Integration – Smarter decisions across industries</li>
+  </ul>
+</section>
+
+<section id="commitment">
+  <h2>The LIV8AI Commitment to Excellence</h2>
+  <p>Championing progress through AI</p>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Where we merge cutting-edge AI technology with innovative solutions.</p>
+  <h3>Why Choose LIV8AI?</h3>
+  <ul>
+    <li>Expertise</li>
+    <li>Tailored solutions</li>
+    <li>Innovation at the core</li>
+    <li>Results-driven approach</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>AI Project Gallery</h2>
+  <ul>
+    <li>Smart City Solutions</li>
+    <li>Energy Efficiency Solutions</li>
+    <li>AI in Education</li>
+  </ul>
+  <a href="projects.html">View all projects</a>
+</section>
+
+<section id="methodology">
+  <h2>Our Methodology</h2>
+  <ol>
+    <li>Discover & Consultation</li>
+    <li>Solution Design</li>
+    <li>Testing & Deployment</li>
+  </ol>
+</section>
+
+<section id="testimonials">
+  <h2>What Our Clients Say</h2>
+  <blockquote>
+    <p>"Partnering with LIV8AI was a game-changer..."</p>
+    <cite>Joan Wallace, CEO</cite>
+  </blockquote>
+  <!-- Add more testimonials -->
+</section>
+
+<section id="cta">
+  <h2>Ready to unlock the power of AI for your business?</h2>
+  <a href="contact.html" class="cta-button">Book a Call</a>
+</section>
+
+<section id="blog">
+  <h2>AI Spotlight</h2>
+  <ul>
+    <li>AI in Manufacturing – Nov 8, 2023</li>
+    <li>AI for E-commerce Success – Nov 8, 2023</li>
+    <li>Revolutionizing Learning – Nov 2, 2023</li>
+    <li>Neural Networks in AI – Nov 2, 2023</li>
+  </ul>
+  <a href="blog.html">View all blog</a>
+</section>
+
+<footer>
+  <p>Join our AI community – Transforming Businesses with Intelligent Solutions</p>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="services.html">Services</a> |
+    <a href="projects.html">Projects</a> |
+    <a href="blog.html">Blog</a> |
+    <a href="careers.html">Careers</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+  <p>&copy; 2025 LIV8AI. All Rights Reserved. www.liv8ai.com</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+⸻
+
+4. Style Your Site (css/style.css)
+
+Here’s a basic starting style sheet. You can customize colors, fonts, etc.
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  background-color: #fff;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.cta-button {
+  background-color: #00bfa6;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+footer {
+  background: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+
+⸻
+
+5. Preview & Share
+	•	Click “Run” in Replit
+	•	Copy the Web URL that appears in the right pane to preview or share your site
+
+⸻
+
+6. Optional: Use a Replit DB or Backend
+
+If you want to:
+	•	Collect leads via forms
+	•	Schedule calls
+	•	Store blog posts or project data
+
+…you can add:
+	•	Node.js backend with Express
+	•	Replit DB or Firebase
+	•	External APIs for Calendly, Google Sheets, etc.
+
+⸻
+
+7. Custom Domain (Optional)
+
+You can connect a custom domain like www.liv8ai.com from Replit by:
+	•	Clicking the “Custom Domain” button
+	•	Adding your domain name
+	•	Following the DNS configuration steps
+
+⸻
+
+✅ Deliverables Ready
+
+If you’d like, I can:
+	•	Convert each page into HTML
+	•	Set up your full site structure in a ZIP for upload to Replit
+	•	Add animations, form handlers, and gallery sliders
+
+Let me know how much help you want hands-on vs. DIY.
+
+Want the full starter pack in a downloadable ZIP or editable Replit link?
