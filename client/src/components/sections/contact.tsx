@@ -204,11 +204,11 @@ export default function Contact() {
                 </div>
 
                 <Button
-                  type="submit"
-                  disabled={isSubmitting}
+                  type="button"
+                  onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                 >
-                  {isSubmitting ? "Booking..." : "Book Free Consultation"}
+                  Schedule Free Consultation
                   <Calendar className="ml-2 h-4 w-4" />
                 </Button>
               </form>

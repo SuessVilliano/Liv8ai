@@ -33,7 +33,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:0.4s]">
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold pulse-glow border border-cyan-400"
             >

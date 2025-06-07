@@ -69,10 +69,10 @@ export default function Projects() {
 
         <div className="text-center mt-12">
           <Button
-            onClick={() => scrollToSection("contact")}
+            onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            View All Projects 
+            Discuss Your Project 
             <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
         </div>

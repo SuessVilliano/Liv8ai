@@ -76,11 +76,11 @@ export default function Blog() {
 
         <div className="text-center mt-12">
           <Button
-            onClick={() => scrollToSection("contact")}
+            onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
           >
-            View All Articles 
+            Get AI Insights for Your Business 
             <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
         </div>

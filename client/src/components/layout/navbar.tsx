@@ -72,10 +72,10 @@ export default function Navbar() {
                 </button>
               ))}
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
-                Contact
+                Let's Talk
               </Button>
             </div>
           </div>
@@ -104,10 +104,10 @@ export default function Navbar() {
                     </button>
                   ))}
                   <Button
-                    onClick={() => scrollToSection("contact")}
+                    onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
                     className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4"
                   >
-                    Contact
+                    Let's Talk
                   </Button>
                 </div>
               </SheetContent>

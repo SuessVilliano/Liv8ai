@@ -80,10 +80,10 @@ export default function Careers() {
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-6">Don't see the perfect role? We're always interested in talking to talented people.</p>
           <Button
-            onClick={() => scrollToSection("contact")}
+            onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            Get In Touch 
+            Schedule a Call 
             <Mail className="ml-2 h-4 w-4" />
           </Button>
         </div>

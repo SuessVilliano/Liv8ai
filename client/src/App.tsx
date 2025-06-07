@@ -4,6 +4,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
+import ExitPopup from "@/components/exit-popup";
+import { useExitPopup } from "@/hooks/use-exit-popup";
 
 function Router() {
   return (
@@ -15,11 +17,14 @@ function Router() {
 }
 
 function App() {
+  const { showPopup, closePopup } = useExitPopup();
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Router />
+        <ExitPopup isOpen={showPopup} onClose={closePopup} />
       </TooltipProvider>
     </QueryClientProvider>
   );
