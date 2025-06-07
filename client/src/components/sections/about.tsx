@@ -85,12 +85,21 @@ export default function About() {
               </div>
             </div>
 
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Learn More About Us
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Learn More About Us
+              </Button>
+              <Button
+                onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
+                variant="outline"
+                className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-background"
+              >
+                Schedule a Call
+              </Button>
+            </div>
           </div>
         </div>
       </div>

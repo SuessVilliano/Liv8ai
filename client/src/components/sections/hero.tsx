@@ -51,20 +51,22 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Robotic Hand Visual */}
+        {/* AI Demo Video */}
         <div className="relative animate-fade-in-up [animation-delay:0.6s]">
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt="Futuristic robotic hand reaching out, symbolizing AI assistance and innovation"
-              className="w-full h-auto max-w-lg mx-auto rounded-2xl shadow-2xl shadow-cyan-500/30"
-              style={{
-                filter: 'hue-rotate(180deg) saturate(1.2) brightness(1.1)',
-                transform: 'perspective(1000px) rotateY(-5deg)'
-              }}
-            />
-            {/* Glowing effect overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-xl animate-pulse"></div>
+          <div className="relative bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl shadow-cyan-500/30">
+              <iframe
+                src="https://www.youtube.com/embed/4fqOCqEk6u4?si=vHXlodH1KE3d-c1K"
+                title="LIV8AI - AI Solutions Demo"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+            
+            {/* Glowing effect around video */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-xl animate-pulse -z-10"></div>
             
             {/* Floating data points */}
             <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded-full pulse-glow animate-pulse [animation-delay:1s]"></div>
