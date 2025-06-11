@@ -72,6 +72,11 @@ export default function Navbar() {
                   {link.label}
                 </button>
               ))}
+              <Link href="/book-a-call">
+                <span className="nav-link text-foreground hover:text-primary font-medium px-3 py-2 cursor-pointer">
+                  Strategy Call
+                </span>
+              </Link>
               <Button
                 onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
@@ -104,6 +109,11 @@ export default function Navbar() {
                       {link.label}
                     </button>
                   ))}
+                  <Link href="/book-a-call">
+                    <span className="text-left text-foreground hover:text-primary font-medium py-2 cursor-pointer block">
+                      Strategy Call
+                    </span>
+                  </Link>
                   <Button
                     onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
                     className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4"
