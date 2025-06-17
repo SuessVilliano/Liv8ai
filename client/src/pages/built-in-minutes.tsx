@@ -489,13 +489,12 @@ export default function BuiltInMinutes() {
           
           <div className="flex justify-center">
             <iframe 
-              src="https://studio.pickaxe.co/_embed/2KVYJQJVS9?d=deployment-c22d4777-0cd4-4453-b108-081ced76cff7" 
+              src="https://staff.liv8ai.com/_embed/69FW9UC82RB?d=deployment-61a58b78-6740-4bd6-b590-fdb20d625253" 
               style={{
                 width: "100%", 
                 height: "500px", 
                 maxWidth: "700px", 
-                borderRadius: "8px",
-                border: "1px solid hsl(var(--border))"
+                borderRadius: "4px"
               }} 
               frameBorder="0"
               title="AI Business Consultant"
