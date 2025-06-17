@@ -111,106 +111,107 @@ export default function BuiltInMinutes() {
           <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-cyan-200 rounded-full pulse-glow animate-bounce [animation-delay:0.5s]"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <Badge className="bg-cyan-400/20 text-cyan-400 border-cyan-400/30 px-6 py-2 text-base font-semibold">
+        <div className="relative w-full max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <div className="mb-6">
+            <Badge className="bg-cyan-400/20 text-cyan-400 border-cyan-400/30 px-4 py-2 text-sm font-semibold">
               Built in Minutes
             </Badge>
           </div>
           
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up leading-tight text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in-up leading-tight">
             Ready to Stop
-            <span className="gradient-text block">Waiting?</span>
+            <br />
+            <span className="gradient-text">Waiting?</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:0.2s] text-center px-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
             This is the last time you downplay your power.
           </p>
           
-          <p className="text-base text-gray-400 mb-8 max-w-2xl mx-auto animate-fade-in-up [animation-delay:0.3s] px-4 text-center">
+          <p className="text-sm sm:text-base text-gray-400 mb-8 max-w-xl mx-auto animate-fade-in-up [animation-delay:0.3s] leading-relaxed">
             You create in minutes. You automate what others complicate. You're not here to blend in—you're here to build what frees you.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up [animation-delay:0.4s]">
+          <div className="flex flex-col gap-4 items-center animate-fade-in-up [animation-delay:0.4s]">
             <Button
               onClick={handleBookCall}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold pulse-glow"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 text-base font-semibold pulse-glow w-full max-w-sm"
             >
               Book Your Creative Makeover Call Now
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button
               onClick={() => document.getElementById('ai-chat')?.scrollIntoView({ behavior: 'smooth' })}
               variant="outline"
               size="lg"
-              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-background px-8 py-4 text-lg font-semibold"
+              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-background px-6 py-3 text-base font-semibold w-full max-w-sm"
             >
               Start AI Conversation
-              <MessageCircle className="ml-2 h-5 w-5" />
+              <MessageCircle className="ml-2 h-4 w-4" />
             </Button>
           </div>
 
-          <div className="mt-8 text-gray-400 animate-fade-in-up [animation-delay:0.6s]">
-            <p className="text-sm max-w-2xl mx-auto">Join the creative revolution. Your vision deserves the right hands.</p>
+          <div className="mt-6 text-gray-400 animate-fade-in-up [animation-delay:0.6s]">
+            <p className="text-xs sm:text-sm max-w-lg mx-auto">Join the creative revolution. Your vision deserves the right hands.</p>
           </div>
         </div>
       </section>
 
       {/* Problem Statement */}
-      <section className="py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 px-4">You're Not Crazy.</h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto px-4">
+      <section className="py-16 bg-card">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">You're Not Crazy.</h2>
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
               You just haven't packaged your genius the right way.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-12">
             <div>
-              <h3 className="text-3xl font-bold mb-8 text-red-400">The Truth About Why You're Stuck:</h3>
-              <div className="space-y-6">
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 text-red-400 text-center">The Truth About Why You're Stuck:</h3>
+              <div className="space-y-4 max-w-2xl mx-auto">
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-6 mt-1 flex-shrink-0">
-                    <span className="text-white text-sm">✕</span>
+                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <span className="text-white text-xs">✕</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold mb-2">You're brilliant but broke</h4>
-                    <p className="text-lg text-muted-foreground">Amazing ideas, zero execution support</p>
+                    <h4 className="text-base sm:text-lg font-semibold mb-1">You're brilliant but broke</h4>
+                    <p className="text-sm sm:text-base text-muted-foreground">Amazing ideas, zero execution support</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-6 mt-1 flex-shrink-0">
-                    <span className="text-white text-sm">✕</span>
+                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <span className="text-white text-xs">✕</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold mb-2">Agencies want 8-week proposals</h4>
-                    <p className="text-lg text-muted-foreground">While your vision dies in meeting rooms</p>
+                    <h4 className="text-base sm:text-lg font-semibold mb-1">Agencies want 8-week proposals</h4>
+                    <p className="text-sm sm:text-base text-muted-foreground">While your vision dies in meeting rooms</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-6 mt-1 flex-shrink-0">
-                    <span className="text-white text-sm">✕</span>
+                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <span className="text-white text-xs">✕</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold mb-2">Freelancers disappear mid-project</h4>
-                    <p className="text-lg text-muted-foreground">Leaving you with half-built dreams</p>
+                    <h4 className="text-base sm:text-lg font-semibold mb-1">Freelancers disappear mid-project</h4>
+                    <p className="text-sm sm:text-base text-muted-foreground">Leaving you with half-built dreams</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-3xl p-8 md:p-12 text-center">
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-cyan-400">I'm That Someone.</h3>
-              <div className="space-y-4 md:space-y-6 text-base md:text-lg">
+            <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-2xl p-6 sm:p-8 text-center max-w-2xl mx-auto">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-cyan-400">I'm That Someone.</h3>
+              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
                 <p>You don't need a team. You need a trigger.</p>
                 <p>Someone who sees the system behind your ideas.</p>
                 <p>Someone who helps you build in minutes—what you've dreamed for years.</p>
               </div>
               <Button
                 onClick={handleBookCall}
-                className="mt-6 md:mt-8 bg-cyan-400 text-black hover:bg-cyan-300 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold"
+                className="mt-4 sm:mt-6 bg-cyan-400 text-black hover:bg-cyan-300 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold w-full max-w-xs"
               >
                 Let's Make Your Business Make Sense Again
               </Button>
