@@ -66,7 +66,7 @@ export default function AIChat() {
 
       if (!response.ok) throw new Error('Failed to get AI response');
       
-      const data: ChatResponse = await response.json();
+      const data = await response.json() as ChatResponse;
 
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),

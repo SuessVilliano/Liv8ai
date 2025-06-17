@@ -476,6 +476,26 @@ export default function BuiltInMinutes() {
           </div>
         </div>
       </footer>
+
+      {/* AI Chat Section */}
+      <section id="ai-chat" className="py-20 bg-gradient-to-br from-purple-900/20 to-cyan-900/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 px-4">Let's Build Your Solution</h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+              Talk to our AI business consultant. Tell us your challenges and we'll capture your requirements to build your solution instantly.
+            </p>
+          </div>
+          
+          <AIChat />
+          
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground px-4">
+              This AI conversation captures your business requirements and webhooks them to Google Sheets for instant solution building.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
