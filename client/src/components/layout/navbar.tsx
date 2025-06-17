@@ -72,9 +72,9 @@ export default function Navbar() {
                   {link.label}
                 </button>
               ))}
-              <Link href="/book-a-call">
+              <Link href="/built-in-minutes">
                 <span className="nav-link text-foreground hover:text-primary font-medium px-3 py-2 cursor-pointer">
-                  Strategy Call
+                  Built in Minutes
                 </span>
               </Link>
               <Button
@@ -109,9 +109,9 @@ export default function Navbar() {
                       {link.label}
                     </button>
                   ))}
-                  <Link href="/book-a-call">
+                  <Link href="/built-in-minutes">
                     <span className="text-left text-foreground hover:text-primary font-medium py-2 cursor-pointer block">
-                      Strategy Call
+                      Built in Minutes
                     </span>
                   </Link>
                   <Button

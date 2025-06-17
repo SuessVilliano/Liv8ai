@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import BookACall from "@/pages/book-a-call";
+import BuiltInMinutes from "@/pages/built-in-minutes";
 import ExitPopup from "@/components/exit-popup";
 import { useExitPopup } from "@/hooks/use-exit-popup";
 
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/home" component={Home} />
       <Route path="/book-a-call" component={BookACall} />
+      <Route path="/built-in-minutes" component={BuiltInMinutes} />
     </Switch>
   );
 }
