@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +9,23 @@ export default function BuiltInMinutes() {
   const handleBookCall = () => {
     window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank');
   };
+
+  useEffect(() => {
+    // Initialize MakeForms embed when component mounts
+    const initializeMakeForms = () => {
+      if (window.makeforms) {
+        new window.makeforms.Embed({ 
+          sourceId: "685197ffe60395ec724f4244", 
+          root: "ebtlljigh" 
+        }).build();
+      }
+    };
+
+    // Small delay to ensure the script is loaded
+    const timer = setTimeout(initializeMakeForms, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   const pricingPlans = [
     {
@@ -154,6 +172,22 @@ export default function BuiltInMinutes() {
 
           <div className="mt-6 text-gray-400 animate-fade-in-up [animation-delay:0.6s]">
             <p className="text-xs sm:text-sm max-w-lg mx-auto">Join the creative revolution. Your vision deserves the right hands.</p>
+          </div>
+
+          {/* YouTube Video */}
+          <div className="mt-12 animate-fade-in-up [animation-delay:0.8s]">
+            <div className="max-w-4xl mx-auto">
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-cyan-400/20">
+                <iframe
+                  src="https://www.youtube.com/embed/msamk5o3UrM?si=t8t0VB14FTFlHYFY"
+                  title="LIV8AI - Built in Minutes"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -504,6 +538,34 @@ export default function BuiltInMinutes() {
           <div className="text-center mt-8">
             <p className="text-sm text-muted-foreground px-4">
               This AI consultant captures your business requirements and automatically generates solutions for instant implementation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-20 bg-card">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Fill out the form below and let's build your solution in minutes.
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <div className="w-full max-w-3xl">
+              <div id="ebtlljigh" className="makeforms-js-embed relative h-full min-h-[500px]">
+                <script dangerouslySetInnerHTML={{
+                  __html: `new makeforms.Embed({ sourceId: "685197ffe60395ec724f4244", root: "ebtlljigh" }).build()`
+                }} />
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground">
+              Can't see the form? <a href="https://us.makeforms.co/auitqnj/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">Click here to open it directly</a>
             </p>
           </div>
         </div>
