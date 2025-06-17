@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ArrowRight, Calendar, Star, Zap, Clock, Target, Users, Code, Sparkles, Play } from "lucide-react";
+import { Check, ArrowRight, Calendar, Star, Zap, Clock, Target, Users, Code, Sparkles, Play, MessageCircle } from "lucide-react";
 import LandingNavbar from "@/components/layout/landing-navbar";
+import AIChat from "@/components/ai-chat";
 
 export default function BuiltInMinutes() {
   const handleBookCall = () => {
@@ -131,7 +132,7 @@ export default function BuiltInMinutes() {
             You create in minutes. You automate what others complicate. You're not here to blend in—you're here to build what frees you.
           </p>
           
-          <div className="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up [animation-delay:0.4s]">
             <Button
               onClick={handleBookCall}
               size="lg"
@@ -139,6 +140,15 @@ export default function BuiltInMinutes() {
             >
               Book Your Creative Makeover Call Now
               <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button
+              onClick={() => document.getElementById('ai-chat')?.scrollIntoView({ behavior: 'smooth' })}
+              variant="outline"
+              size="lg"
+              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-background px-8 py-4 text-lg font-semibold"
+            >
+              Start AI Conversation
+              <MessageCircle className="ml-2 h-5 w-5" />
             </Button>
           </div>
 
