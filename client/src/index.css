@@ -47,6 +47,22 @@
   --ring: 188 100% 42%;
 }
 
+/* Light theme specific overrides */
+.light .hero-gradient {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.light .gradient-text {
+  background: linear-gradient(135deg, #0891b2, #0e7490);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .circuit-pattern {
+  opacity: 0.1;
+}
+
 @layer base {
   * {
     @apply border-border;

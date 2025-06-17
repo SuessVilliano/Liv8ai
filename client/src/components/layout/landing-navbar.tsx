@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 export default function LandingNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,6 +59,14 @@ export default function LandingNavbar() {
                   Home
                 </span>
               </Link>
+              <Button
+                onClick={toggleTheme}
+                variant="ghost"
+                size="sm"
+                className="p-2"
+              >
+                {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              </Button>
               <Button
                 onClick={handleBookCall}
                 className="bg-primary text-primary-foreground hover:bg-primary/90"

@@ -127,7 +127,7 @@ export default function BuiltInMinutes() {
             This is the last time you downplay your power.
           </p>
           
-          <p className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto animate-fade-in-up [animation-delay:0.3s]">
+          <p className="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto animate-fade-in-up [animation-delay:0.3s] px-4">
             You create in minutes. You automate what others complicate. You're not here to blend in—you're here to build what frees you.
           </p>
           
@@ -192,16 +192,16 @@ export default function BuiltInMinutes() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-3xl p-12 text-center">
-              <h3 className="text-4xl font-bold mb-8 text-cyan-400">I'm That Someone.</h3>
-              <div className="space-y-6 text-lg">
+            <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-3xl p-8 md:p-12 text-center">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-cyan-400">I'm That Someone.</h3>
+              <div className="space-y-4 md:space-y-6 text-base md:text-lg">
                 <p>You don't need a team. You need a trigger.</p>
                 <p>Someone who sees the system behind your ideas.</p>
                 <p>Someone who helps you build in minutes—what you've dreamed for years.</p>
               </div>
               <Button
                 onClick={handleBookCall}
-                className="mt-8 bg-cyan-400 text-black hover:bg-cyan-300 px-8 py-4 text-lg font-semibold"
+                className="mt-6 md:mt-8 bg-cyan-400 text-black hover:bg-cyan-300 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold"
               >
                 Let's Make Your Business Make Sense Again
               </Button>

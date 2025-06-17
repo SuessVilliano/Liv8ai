@@ -80,6 +80,14 @@ export default function Navbar() {
                 </span>
               </Link>
               <Button
+                onClick={toggleTheme}
+                variant="ghost"
+                size="sm"
+                className="p-2"
+              >
+                {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              </Button>
+              <Button
                 onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
@@ -116,6 +124,14 @@ export default function Navbar() {
                       Built in Minutes
                     </span>
                   </Link>
+                  <Button
+                    onClick={toggleTheme}
+                    variant="ghost"
+                    className="justify-start py-2"
+                  >
+                    {theme === "dark" ? <Sun className="h-4 w-4 mr-2" /> : <Moon className="h-4 w-4 mr-2" />}
+                    {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                  </Button>
                   <Button
                     onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
                     className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4"
