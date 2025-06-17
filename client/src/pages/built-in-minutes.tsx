@@ -111,43 +111,39 @@ export default function BuiltInMinutes() {
           <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-cyan-200 rounded-full pulse-glow animate-bounce [animation-delay:0.5s]"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
-            <Badge className="bg-cyan-400/20 text-cyan-400 border-cyan-400/30 px-8 py-3 text-xl font-semibold">
+            <Badge className="bg-cyan-400/20 text-cyan-400 border-cyan-400/30 px-6 py-2 text-base font-semibold">
               Built in Minutes
             </Badge>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 animate-fade-in-up leading-tight">
-            You're Not Stuck—
-            <span className="gradient-text block mt-2">You're Just Missing</span>
-            <span className="text-cyan-400 block mt-2">The Right Hands</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up leading-tight">
+            Ready to Stop
+            <span className="gradient-text block">Waiting?</span>
           </h1>
           
-          <p className="text-2xl md:text-3xl text-gray-300 mb-8 max-w-5xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
-            From consultation to creation—in minutes, not months.
-            <span className="block mt-4 text-cyan-400 font-semibold">
-              Let's sit down. Tell me what you've built or what you want to build.
-            </span>
+          <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+            This is the last time you downplay your power.
           </p>
           
-          <p className="text-xl text-gray-400 mb-12 max-w-4xl mx-auto animate-fade-in-up [animation-delay:0.3s]">
-            In minutes, we might rebuild your whole business… right in front of you.
+          <p className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto animate-fade-in-up [animation-delay:0.3s]">
+            You create in minutes. You automate what others complicate. You're not here to blend in—you're here to build what frees you.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up [animation-delay:0.4s]">
+          <div className="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
             <Button
               onClick={handleBookCall}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-2xl font-semibold pulse-glow"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold pulse-glow"
             >
-              Book Your Creative Makeover Call
-              <Sparkles className="ml-3 h-7 w-7" />
+              Book Your Creative Makeover Call Now
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
 
-          <div className="mt-12 text-gray-400 animate-fade-in-up [animation-delay:0.6s]">
-            <p className="text-sm">This site you're on was built in minutes using the same process we'll use for you.</p>
+          <div className="mt-8 text-gray-400 animate-fade-in-up [animation-delay:0.6s]">
+            <p className="text-sm max-w-2xl mx-auto">Join the creative revolution. Your vision deserves the right hands.</p>
           </div>
         </div>
       </section>
