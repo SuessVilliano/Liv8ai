@@ -118,16 +118,16 @@ export default function BuiltInMinutes() {
             </Badge>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up leading-tight text-center">
             Ready to Stop
             <span className="gradient-text block">Waiting?</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+          <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:0.2s] text-center px-4">
             This is the last time you downplay your power.
           </p>
           
-          <p className="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto animate-fade-in-up [animation-delay:0.3s] px-4">
+          <p className="text-base text-gray-400 mb-8 max-w-2xl mx-auto animate-fade-in-up [animation-delay:0.3s] px-4 text-center">
             You create in minutes. You automate what others complicate. You're not here to blend in—you're here to build what frees you.
           </p>
           
@@ -152,8 +152,8 @@ export default function BuiltInMinutes() {
       <section className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">You're Not Crazy.</h2>
-            <p className="text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 px-4">You're Not Crazy.</h2>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto px-4">
               You just haven't packaged your genius the right way.
             </p>
           </div>
