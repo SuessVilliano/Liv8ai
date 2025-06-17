@@ -13,8 +13,8 @@ export default function BuiltInMinutes() {
   useEffect(() => {
     // Initialize MakeForms embed when component mounts
     const initializeMakeForms = () => {
-      if (window.makeforms) {
-        new window.makeforms.Embed({ 
+      if ((window as any).makeforms) {
+        new (window as any).makeforms.Embed({ 
           sourceId: "685197ffe60395ec724f4244", 
           root: "ebtlljigh" 
         }).build();
@@ -556,9 +556,6 @@ export default function BuiltInMinutes() {
           <div className="flex justify-center">
             <div className="w-full max-w-3xl">
               <div id="ebtlljigh" className="makeforms-js-embed relative h-full min-h-[500px]">
-                <script dangerouslySetInnerHTML={{
-                  __html: `new makeforms.Embed({ sourceId: "685197ffe60395ec724f4244", root: "ebtlljigh" }).build()`
-                }} />
               </div>
             </div>
           </div>
