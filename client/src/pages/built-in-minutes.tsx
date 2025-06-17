@@ -100,8 +100,8 @@ export default function BuiltInMinutes() {
       <LandingNavbar />
       
       {/* Hero Section */}
-      <section className="hero-gradient pt-20 pb-16 relative overflow-hidden min-h-screen flex items-center">
-        <div className="absolute inset-0 circuit-pattern opacity-20"></div>
+      <section className="hero-gradient pt-20 pb-16 relative overflow-hidden min-h-screen flex items-center dark:bg-gradient-to-br dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
+        <div className="absolute inset-0 circuit-pattern opacity-20 dark:opacity-20 light:opacity-10"></div>
         
         {/* Animated floating code elements */}
         <div className="absolute inset-0">
