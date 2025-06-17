@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, ArrowRight, Calendar, Star, Zap, Clock, Target, Users, Code, Sparkles, Play, MessageCircle } from "lucide-react";
 import LandingNavbar from "@/components/layout/landing-navbar";
-import AIChat from "@/components/ai-chat";
 
 export default function BuiltInMinutes() {
   const handleBookCall = () => {
@@ -487,11 +486,24 @@ export default function BuiltInMinutes() {
             </p>
           </div>
           
-          <AIChat />
+          <div className="flex justify-center">
+            <iframe 
+              src="https://studio.pickaxe.co/_embed/2KVYJQJVS9?d=deployment-c22d4777-0cd4-4453-b108-081ced76cff7" 
+              style={{
+                width: "100%", 
+                height: "500px", 
+                maxWidth: "700px", 
+                borderRadius: "8px",
+                border: "1px solid hsl(var(--border))"
+              }} 
+              frameBorder="0"
+              title="AI Business Consultant"
+            />
+          </div>
           
           <div className="text-center mt-8">
             <p className="text-sm text-muted-foreground px-4">
-              This AI conversation captures your business requirements and webhooks them to Google Sheets for instant solution building.
+              This AI consultant captures your business requirements and automatically generates solutions for instant implementation.
             </p>
           </div>
         </div>
