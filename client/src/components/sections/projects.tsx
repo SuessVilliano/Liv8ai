@@ -1,79 +1,186 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, ExternalLink, Globe, Zap, TrendingUp, DollarSign, Brain, Users, Shield, Smartphone } from "lucide-react";
+import { useState } from "react";
 
 export default function Projects() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   const projects = [
     {
-      title: "Smart City Solutions",
-      description: "Integrated AI systems for traffic optimization, energy management, and public safety enhancement across metropolitan areas.",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      alt: "Futuristic smart city with AI-powered infrastructure and glowing digital networks",
+      title: "PooPatrol Check",
+      category: "Quality Assurance",
+      description: "Advanced inspection and quality control system with real-time monitoring capabilities.",
+      icon: Shield,
+      color: "bg-blue-500",
+      industry: "Quality Control",
+      url: "https://sqr.co/PooPatrolCheck"
     },
     {
-      title: "Neural Network Systems", 
-      description: "Advanced deep learning architectures powering next-generation AI applications with unprecedented accuracy and efficiency.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      alt: "Abstract visualization of neural network connections with glowing nodes and pathways",
+      title: "TCC Credit Solutions",
+      category: "FinTech",
+      description: "Comprehensive credit management and financial solutions platform.",
+      icon: DollarSign,
+      color: "bg-green-500",
+      industry: "Financial Services",
+      url: "https://tccreditsolutions.com"
     },
     {
-      title: "Robotic Process Automation",
-      description: "Intelligent automation systems that learn and adapt, transforming business operations and reducing manual workload by 80%.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", 
-      alt: "Futuristic robotic arms and AI systems working in a high-tech automated facility",
+      title: "Hybrid Funding",
+      category: "Investment Platform",
+      description: "Revolutionary funding platform connecting investors with innovative opportunities.",
+      icon: TrendingUp,
+      color: "bg-purple-500",
+      industry: "Investment",
+      url: "https://hybridfunding.co"
     },
+    {
+      title: "Trade Hybrid",
+      category: "Trading Platform",
+      description: "Advanced trading interface with AI-powered market analysis and automation.",
+      icon: Zap,
+      color: "bg-orange-500",
+      industry: "Trading",
+      url: "https://tradehybrid.co"
+    },
+    {
+      title: "Trade Hybrid Pro",
+      category: "Professional Trading",
+      description: "Professional-grade trading platform with advanced analytics and portfolio management.",
+      icon: Brain,
+      color: "bg-cyan-500",
+      industry: "Professional Trading",
+      url: "https://pro.tradehybrid.club/"
+    },
+    {
+      title: "Hybrid Holdings",
+      category: "Asset Management",
+      description: "Comprehensive asset management platform with intelligent portfolio optimization.",
+      icon: Globe,
+      color: "bg-indigo-500",
+      industry: "Asset Management",
+      url: "https://hybridholdings.co/"
+    },
+    {
+      title: "Smart Life Brokers",
+      category: "Insurance Platform",
+      description: "AI-powered insurance brokerage platform with personalized policy recommendations.",
+      icon: Users,
+      color: "bg-teal-500",
+      industry: "Insurance",
+      url: "https://www.smartlifebrokers.com"
+    },
+    {
+      title: "LIV8AI Platform",
+      category: "AI Solutions",
+      description: "Our flagship AI platform delivering intelligent automation and business solutions.",
+      icon: Brain,
+      color: "bg-cyan-400",
+      industry: "Artificial Intelligence",
+      url: "https://liv8ai.com/"
+    },
+    {
+      title: "Growth Pilot",
+      category: "Business Analytics",
+      description: "Advanced business growth analytics platform with predictive insights.",
+      icon: TrendingUp,
+      color: "bg-emerald-500",
+      industry: "Business Intelligence",
+      url: "https://growthpilot.replit.app/login"
+    },
+    {
+      title: "KP Designs",
+      category: "Design Platform",
+      description: "Creative design platform with AI-enhanced tools and collaboration features.",
+      icon: Smartphone,
+      color: "bg-pink-500",
+      industry: "Design Services",
+      url: "https://kpdesigns.replit.app/"
+    },
+    {
+      title: "MSG Master",
+      category: "Communication Hub",
+      description: "Intelligent messaging platform with automated response and analytics capabilities.",
+      icon: Users,
+      color: "bg-violet-500",
+      industry: "Communications",
+      url: "https://msgmaster.liv8ai.com/"
+    },
+    {
+      title: "Plant Vybes",
+      category: "E-commerce",
+      description: "Modern e-commerce platform for plant enthusiasts with smart care recommendations.",
+      icon: Globe,
+      color: "bg-green-600",
+      industry: "E-commerce",
+      url: "https://plant-vybes.replit.app/"
+    },
+    {
+      title: "Wealth Wizard",
+      category: "Financial Planning",
+      description: "AI-powered wealth management platform with personalized financial strategies.",
+      icon: DollarSign,
+      color: "bg-yellow-500",
+      industry: "Wealth Management",
+      url: "https://wealthwizard.liv8ai.com/"
+    }
   ];
 
   return (
     <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">AI Project Gallery</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Live Portfolio</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore our portfolio of successful AI implementations across diverse industries
+            Explore our active platforms and applications - click to experience them live
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="bg-background border-border overflow-hidden card-hover">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.alt}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                <button className="text-primary font-semibold hover:text-primary/80 transition-colors duration-300 flex items-center group">
-                  View Case Study 
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => {
+            const IconComponent = project.icon;
+            return (
+              <Card key={index} className="bg-background border-border overflow-hidden card-hover group cursor-pointer"
+                    onClick={() => window.open(project.url, '_blank')}>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className={`w-12 h-12 rounded-xl ${project.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                      <IconComponent className="h-6 w-6 text-white" />
+                    </div>
+                    <Badge variant="secondary" className="text-xs">
+                      {project.category}
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
+                      {project.industry}
+                    </span>
+                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
-        <div className="text-center mt-12">
-          <Button
-            onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
+        <div className="text-center mt-16">
+          <p className="text-muted-foreground mb-6">Ready to build your own platform?</p>
+          <Button 
+            onClick={() => window.open('https://us.makeforms.co/auitqnj/', '_blank')}
+            size="lg" 
+            className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg"
           >
-            Discuss Your Project 
-            <ExternalLink className="ml-2 h-4 w-4" />
+            Start Your Project
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>

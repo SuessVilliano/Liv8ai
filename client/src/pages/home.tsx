@@ -6,9 +6,7 @@ import About from "@/components/sections/about";
 import Methodology from "@/components/sections/methodology";
 import Projects from "@/components/sections/projects";
 import Testimonials from "@/components/sections/testimonials";
-import Blog from "@/components/sections/blog";
 import Contact from "@/components/sections/contact";
-import Careers from "@/components/sections/careers";
 
 export default function Home() {
   return (
@@ -21,8 +19,6 @@ export default function Home() {
         <Methodology />
         <Projects />
         <Testimonials />
-        <Blog />
-        <Careers />
         <Contact />
       </main>
       <Footer />
