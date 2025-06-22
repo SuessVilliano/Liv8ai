@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, ExternalLink, Globe, Zap, TrendingUp, DollarSign, Brain, Users, Shield, Smartphone } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -131,45 +132,71 @@ export default function Projects() {
     <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Live Portfolio</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Portfolio Universe</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore our active platforms and applications - click to experience them live
+            Step into our VR-like portfolio world - explore 22+ live platforms in an immersive experience
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => {
-            const IconComponent = project.icon;
-            return (
-              <Card key={index} className="bg-background border-border overflow-hidden card-hover group cursor-pointer"
-                    onClick={() => window.open(project.url, '_blank')}>
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className={`w-12 h-12 rounded-xl ${project.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                      <IconComponent className="h-6 w-6 text-white" />
+        <div className="relative">
+          {/* VR Portal Preview */}
+          <div className="bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 rounded-3xl p-8 border border-cyan-400/30 mb-8">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 mb-4 animate-pulse">
+                <Globe className="h-12 w-12 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Enter Portfolio Universe</h3>
+              <p className="text-cyan-100">22+ live platforms • VR-style navigation • Full functionality</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+                <p className="text-sm text-cyan-100">Quality Assurance</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                  <DollarSign className="h-8 w-8 text-white" />
+                </div>
+                <p className="text-sm text-cyan-100">FinTech Solutions</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                  <Brain className="h-8 w-8 text-white" />
+                </div>
+                <p className="text-sm text-cyan-100">AI Platforms</p>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <Link href="/portfolio">
+                <Button size="lg" className="bg-gradient-to-r from-cyan-400 to-purple-500 text-black hover:opacity-90 px-8 py-4 text-lg font-semibold">
+                  Enter Portfolio Universe
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Preview Grid */}
+          <div className="grid md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {projects.slice(0, 12).map((project, index) => {
+              const IconComponent = project.icon;
+              return (
+                <div key={index} className="group cursor-pointer" onClick={() => window.open(project.url, '_blank')}>
+                  <div className={`w-full aspect-square rounded-xl bg-gradient-to-br ${project.color} p-4 
+                                transform transition-all duration-300 hover:scale-105 hover:rotate-3`}>
+                    <div className="w-full h-full bg-white/10 rounded-lg flex flex-col items-center justify-center">
+                      <IconComponent className="h-6 w-6 text-white mb-2" />
+                      <p className="text-white text-xs text-center font-medium">{project.title}</p>
                     </div>
-                    <Badge variant="secondary" className="text-xs">
-                      {project.category}
-                    </Badge>
                   </div>
-                  <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
-                      {project.industry}
-                    </span>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="text-center mt-16">
