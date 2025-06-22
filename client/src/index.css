@@ -182,3 +182,35 @@
   50% { opacity: 1; }
   100% { opacity: 0.3; transform: translateX(100%); }
 }
+
+/* VR Portfolio Styles */
+.grid-lines {
+  background-image: 
+    linear-gradient(rgba(0, 249, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 249, 255, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  width: 100%;
+  height: 100%;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(100px, 100px); }
+}
+
+.animate-float {
+  animation: float ease-in-out infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.hover\:rotate-y-12:hover {
+  transform: rotateY(12deg) scale(1.1);
+}

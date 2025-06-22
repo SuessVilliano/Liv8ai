@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/hooks/use-theme";
 import Home from "@/pages/home";
 import BookACall from "@/pages/book-a-call";
 import BuiltInMinutes from "@/pages/built-in-minutes";
+import Portfolio from "@/pages/portfolio";
 import ExitPopup from "@/components/exit-popup";
 import { useExitPopup } from "@/hooks/use-exit-popup";
 
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/home" component={Home} />
       <Route path="/book-a-call" component={BookACall} />
       <Route path="/built-in-minutes" component={BuiltInMinutes} />
+      <Route path="/portfolio" component={Portfolio} />
     </Switch>
   );
 }

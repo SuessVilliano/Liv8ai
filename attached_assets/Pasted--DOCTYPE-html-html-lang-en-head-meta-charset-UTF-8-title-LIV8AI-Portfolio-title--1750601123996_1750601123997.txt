@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LIV8AI Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #10121a, #0a0b12);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #00f9ff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px #00f9ff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #00f9ff55;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #fff;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      display: none;
+    }
+
+    .modal iframe {
+      width: 90vw;
+      height: 90vh;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    @media (max-width: 600px) {
+      .modal iframe {
+        width: 95vw;
+        height: 85vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LIV8AI Portfolio</h1>
+  </header>
+
+  <div class="grid" id="portfolioGrid"></div>
+
+  <div class="modal" id="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <iframe id="modalIframe" src=""></iframe>
+  </div>
+
+  <script>
+    const projects = [
+      { title: "Poo Patrol Check", url: "https://poopatrolcheck.liv8ai.com/" },
+      { title: "TC Credit Solutions", url: "https://tccreditsolutions.com/" },
+      { title: "Hybrid Funding", url: "https://Hybridfunding.co" },
+      { title: "Trade Hybrid", url: "https://tradehybrid.co" },
+      { title: "TradeHybrid Pro", url: "https://pro.tradehybrid.club/" },
+      { title: "Hybrid Holdings", url: "https://hybridholdings.co/" },
+      { title: "Smart Life Brokers", url: "https://smartlifebrokers.com" },
+      { title: "LIV8AI", url: "https://liv8ai.com/" },
+      { title: "iCopy Trades", url: "https://copy.hybridfunding.co/" },
+      { title: "Trading Battles", url: "https://battles.hybridfunding.co" },
+      { title: "GrowthPilot", url: "https://growthpilot.liv8ai.com/login" },
+      { title: "KP Designs", url: "https://kpdesigns.liv8ai.com/" },
+      { title: "MSG Master", url: "https://msgmaster.liv8ai.com/" },
+      { title: "Plant Vybes", url: "https://plantvybes.liv8ai.com/" },
+      { title: "Wealth Wizard", url: "https://wealthwizard.liv8ai.com/" },
+      { title: "MindFlow", url: "https://mindflow.liv8ai.com/" },
+      { title: "Trade Pulse", url: "https://tradepulse.tradehybrid.club/" },
+      { title: "Kitchen Compass", url: "https://kitchen.liv8ai.com/" },
+      { title: "LIV8 Solar", url: "https://liv8solar.com/" },
+      { title: "AIVA Assistant", url: "https://aiva.liv8ai.com/" },
+      { title: "Signal Room", url: "https://signals.tradehybrid.club/" },
+      { title: "Bot Stack", url: "https://botstack.liv8ai.com/" },
+    ];
+
+    const grid = document.getElementById('portfolioGrid');
+    const modal = document.getElementById('modal');
+    const modalIframe = document.getElementById('modalIframe');
+
+    function openModal(url) {
+      modal.style.display = 'flex';
+      modalIframe.src = url;
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+      modalIframe.src = '';
+    }
+
+    projects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `<h3>${project.title}</h3>`;
+      card.onclick = () => openModal(project.url);
+      grid.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
