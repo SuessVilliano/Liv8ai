@@ -229,7 +229,7 @@ export default function ThankYou() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="text-sm text-green-200">
-                  <strong>Email:</strong> hello@liv8ai.com
+                  <strong>Email:</strong> contact@liv8ai.com
                 </div>
                 <div className="text-sm text-green-200">
                   <strong>Phone:</strong> (404) 495-5397

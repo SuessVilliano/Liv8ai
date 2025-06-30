@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Calendar, Clock, Video, CheckCircle, Users, Shield } from "lucide-react";
 
 declare global {
@@ -156,6 +157,23 @@ export default function Schedule() {
                   <div className="w-full">
                     <div className="tidycal-embed" data-path="liv8/claritycall"></div>
                     <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
+                    
+                    {/* Backup Button - Shows if embed doesn't load */}
+                    <div className="mt-6 text-center">
+                      <p className="text-sm text-muted-foreground mb-4">
+                        Having trouble with the scheduler above?
+                      </p>
+                      <Button 
+                        onClick={() => window.open('https://sqr.co/ClarityCall', '_blank')}
+                        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        <Calendar className="mr-2 h-5 w-5" />
+                        Open Calendar Directly
+                      </Button>
+                      <p className="text-xs text-muted-foreground mt-2">
+                        Click here to schedule your appointment in a new window
+                      </p>
+                    </div>
                   </div>
                   
                   {/* Instructions */}
@@ -171,7 +189,7 @@ export default function Schedule() {
                       <p className="text-xs text-green-700 dark:text-green-300">
                         <strong>Note:</strong> TidyCal should be configured to redirect to: 
                         <code className="bg-green-100 dark:bg-green-900 px-1 rounded">
-                          https://your-domain.com/thank-you?email=&#123;&#123;email&#125;&#125;&name=&#123;&#123;name&#125;&#125;
+                          https://liv8ai.com/appointment-confirmed?email=&#123;&#123;email&#125;&#125;&name=&#123;&#123;name&#125;&#125;
                         </code>
                       </p>
                     </div>
@@ -191,7 +209,7 @@ export default function Schedule() {
                 Need help scheduling or have specific questions about our AI solutions?
               </p>
               <p className="text-sm text-purple-200">
-                Email us at <span className="font-semibold">hello@liv8ai.com</span> or call <span className="font-semibold">(555) 123-4567</span>
+                Email us at <span className="font-semibold">contact@liv8ai.com</span> or call <span className="font-semibold">(404) 495-5397</span>
               </p>
             </div>
           </div>

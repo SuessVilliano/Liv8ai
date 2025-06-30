@@ -63,8 +63,8 @@ A modern AI agency website for LIV8AI showcasing innovative digital services thr
 - **Note**: Configure form to redirect to /form-submitted page after submission
 
 ### TidyCal Configuration  
-- **Scheduler URL**: tidycal.com/liv8ai/ai-strategy-call
-- **Redirect After Booking**: `https://your-domain.com/thank-you?email={{email}}&name={{name}}`
+- **Scheduler URL**: sqr.co/ClarityCall (liv8/claritycall)
+- **Redirect After Booking**: `https://liv8ai.com/appointment-confirmed?email={{email}}&name={{name}}`
 - **Note**: Configure TidyCal to pass email and name parameters for affiliate tracking
 
 ### Complete Funnel Flow

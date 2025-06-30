@@ -241,7 +241,7 @@ export default function AppointmentConfirmed() {
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <Mail className="h-4 w-4 text-blue-400" />
-                      <span className="text-white text-sm">hello@liv8ai.com</span>
+                      <span className="text-white text-sm">contact@liv8ai.com</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Phone className="h-4 w-4 text-green-400" />
