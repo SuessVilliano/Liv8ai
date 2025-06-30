@@ -1,0 +1,127 @@
+Got it — you’re not starting from scratch, you’re adding affiliate tracking + funnel logic into your existing site at liv8ai.com, which is hosted on Replit.
+
+✅ Here’s What You Need To Do (Add-On Strategy)
+
+⸻
+
+🔧 1. Insert the Global Affiliate Tracking Script
+
+Add this to the <head> tag of every page (or your site-wide layout/header file):
+
+<script 
+  src="https://pushlapgrowth.com/affiliate-tracker.js" 
+  data-affiliate 
+  data-program-id="9acd7ded-50dc-4b98-b698-c78edc0481b3" 
+  async>
+</script>
+
+
+⸻
+
+📝 2. Create or Edit Your Funnel Pages
+
+You can add the following pages to your Replit site:
+
+🔹 form.html (or /apply or /get-started)
+	•	Embed your MakeForms form:
+
+<script src="https://assets.makeforms.io/bundles/scripts/live/us/embed.js"></script>
+<div id="ejlirosjq"></div>
+<script>
+  new makeforms.Embed({ 
+    sourceId: "685197ffe60395ec724f4244", 
+    root: "ejlirosjq" 
+  }).build();
+</script>
+
+	•	Below the form, add a “Next: Schedule Your Call” button:
+
+<a href="/schedule?email=EMAIL_FROM_FORM&name=NAME_FROM_FORM" class="btn">Next: Schedule Your Call</a>
+
+	•	If MakeForms doesn’t support redirect with query params, you can:
+	•	Use a webhook + localStorage
+	•	Or just skip to /schedule and rely on manual matching for now
+	•	Add this script to capture referral when form is submitted or loaded with email:
+
+<script>
+  const email = new URLSearchParams(window.location.search).get('email');
+  const name = new URLSearchParams(window.location.search).get('name');
+
+  if (email) {
+    window.createPushLapEmail(email, name || '');
+  }
+</script>
+
+
+⸻
+
+🔹 schedule.html
+	•	Embed your TidyCal scheduler:
+
+<iframe 
+  src="https://tidycal.com/YOUR-SCHEDULER" 
+  width="100%" height="600px" style="border:none;">
+</iframe>
+
+	•	Make sure in TidyCal settings, under Redirect After Booking, you send users to:
+
+https://liv8ai.com/call-confirmed?email={{email}}&name={{name}}
+
+(Use correct variable placeholders if supported. Otherwise, skip email and just track with cookies.)
+
+⸻
+
+🔹 call-confirmed.html
+	•	Show a success message like:
+
+“Thanks! Your call has been scheduled.”
+
+	•	Track conversion:
+
+<script>
+  const email = new URLSearchParams(window.location.search).get('email');
+  const name = new URLSearchParams(window.location.search).get('name');
+
+  if (email) {
+    window.createPushLapSale({
+      name: name || '',
+      email: email,
+      amount: 0
+    });
+  }
+</script>
+
+
+⸻
+
+🔐 3. Add an “Affiliate Login” Button Somewhere
+
+Wherever appropriate (header/footer, nav, dashboard), add:
+
+<a href="https://liv8.pushlapgrowth.com/login" target="_blank">Affiliate Login</a>
+
+
+⸻
+
+✅ Optional: Store Email in LocalStorage Between Steps
+
+To keep email and name even if TidyCal or MakeForms don’t pass them, set them like this on form submit:
+
+localStorage.setItem('affiliate_email', userEmail);
+localStorage.setItem('affiliate_name', userName);
+
+Then on the /call-confirmed.html, fallback to:
+
+const email = localStorage.getItem('affiliate_email');
+const name = localStorage.getItem('affiliate_name');
+
+
+⸻
+
+Want Me to Generate the Code Blocks for These Pages?
+
+Let me know:
+	•	Your TidyCal URL
+	•	What the page paths are in your Replit (or if you’re using a framework like React/Vue)
+
+And I’ll hand you the exact HTML or component code to drop in.

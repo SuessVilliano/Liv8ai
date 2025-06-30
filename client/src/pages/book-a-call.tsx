@@ -1,472 +1,224 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Check, ArrowRight, Calendar, Star, Users, Zap, Target, Shield } from "lucide-react";
-import LandingNavbar from "@/components/layout/landing-navbar";
+import { ArrowRight, Calendar, Clock, Video, CheckCircle, Phone, Users, Star } from "lucide-react";
+import { Link } from "wouter";
+
+declare global {
+  interface Window {
+    makeforms: any;
+    createPushLapEmail: any;
+  }
+}
 
 export default function BookACall() {
-  const handleBookCall = () => {
-    window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank');
+  const [formLoaded, setFormLoaded] = useState(false);
+
+  useEffect(() => {
+    // Load MakeForms script
+    const script = document.createElement('script');
+    script.src = 'https://assets.makeforms.io/bundles/scripts/live/us/embed.js';
+    script.async = true;
+    script.onload = () => {
+      setFormLoaded(true);
+      // Initialize the embedded form
+      if (window.makeforms) {
+        new window.makeforms.Embed({ 
+          sourceId: "685197ffe60395ec724f4244", 
+          root: "makeform-embed" 
+        }).build();
+      }
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  const handleFormSubmit = () => {
+    // Track form submission for affiliate system
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    const name = urlParams.get('name');
+
+    if (email && window.createPushLapEmail) {
+      window.createPushLapEmail(email, name || '');
+    }
   };
 
-  const plans = [
+  const benefits = [
     {
-      name: "Launch",
-      target: "New businesses or side hustlers",
-      price: "$297",
-      period: "/mo",
-      features: [
-        "Pre-built systems setup",
-        "1 conversion funnel",
-        "3 core automations",
-        "Branded dashboard",
-        "Basic support"
-      ],
-      popular: false
+      icon: CheckCircle,
+      title: "Free Consultation",
+      description: "30-minute strategy session at no cost",
+      color: "from-green-500 to-emerald-500"
     },
     {
-      name: "Elevate",
-      target: "Agencies & coaches ready to grow",
-      price: "$997",
-      period: "/mo",
-      features: [
-        "Full GHL system implementation",
-        "Branded client portal",
-        "Managed AI support chat",
-        "Advanced automations",
-        "Content flow management",
-        "Priority support"
-      ],
-      popular: true
+      icon: Video,
+      title: "Expert Analysis",
+      description: "AI readiness assessment for your business",
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      name: "Scale",
-      target: "6-7 figure businesses & white-label partners",
-      price: "$1997",
-      period: "/mo+",
-      features: [
-        "Everything in Elevate",
-        "Full client support management",
-        "Advanced AI integration",
-        "Dedicated sales closers",
-        "VA systems management",
-        "White-label partnership"
-      ],
-      popular: false
+      icon: Calendar,
+      title: "Custom Roadmap",
+      description: "Personalized AI implementation plan",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Clock,
+      title: "Quick Results",
+      description: "See potential ROI within 24 hours",
+      color: "from-orange-500 to-red-500"
     }
   ];
 
   const testimonials = [
     {
-      quote: "Liv8AI took our messy backend and turned it into a profit machine. My support tickets dropped 80%, and I finally had time to close deals again.",
-      author: "Trey M.",
-      role: "Agency Owner",
+      name: "Sarah Chen",
+      role: "CEO, TechStart",
+      content: "The AI strategy call was incredibly valuable. We implemented their recommendations and saw 40% efficiency gains within 2 weeks.",
       rating: 5
     },
     {
-      quote: "We went from overwhelmed to optimized in 10 days. I've had VAs before — but nothing like this.",
-      author: "Sarah J.",
-      role: "Business Coach",
+      name: "Michael Rodriguez",
+      role: "Operations Director",
+      content: "LIV8AI's expertise helped us identify automation opportunities we never considered. The ROI has been phenomenal.",
       rating: 5
-    },
-    {
-      quote: "I resell their setup to my clients — I look like a genius, and they handle everything.",
-      author: "Michael R.",
-      role: "SaaS White-Labeler",
-      rating: 5
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "Is this just GoHighLevel white-label?",
-      answer: "That's the foundation — but our service includes custom setup, support systems, AI bots, and management services. You're not buying software. You're buying results."
-    },
-    {
-      question: "Can I resell your systems?",
-      answer: "Yes — our Elevate and Scale plans are fully white-labeled. Use your own brand. We'll do the backend."
-    },
-    {
-      question: "What if I already use GHL or another CRM?",
-      answer: "Perfect. We can build around it or migrate your workflows into a unified dashboard."
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <LandingNavbar />
-      {/* Hero Section */}
-      <section className="hero-gradient pt-20 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 circuit-pattern opacity-20"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <div className="mb-6">
-            <Badge className="bg-cyan-400/20 text-cyan-400 border-cyan-400/30 px-6 py-2 text-lg">
-              Built to Elevate You
-            </Badge>
-          </div>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-            Where Business Meets
-            <span className="gradient-text block mt-2">Intelligence</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            We help agencies, entrepreneurs, and startups implement done-for-you AI, automation, and backend support systems to scale fast.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-6 mb-12 text-lg">
-            <div className="flex items-center text-cyan-400">
-              <Check className="h-6 w-6 mr-2" />
-              White-Label Tech Infrastructure
-            </div>
-            <div className="flex items-center text-cyan-400">
-              <Check className="h-6 w-6 mr-2" />
-              Automated Systems & AI Workflows
-            </div>
-            <div className="flex items-center text-cyan-400">
-              <Check className="h-6 w-6 mr-2" />
-              Scalable Support-as-a-Service
-            </div>
-          </div>
-          
-          <Button
-            onClick={handleBookCall}
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-xl font-semibold pulse-glow"
-          >
-            Get a Free Strategy Call
-            <Calendar className="ml-3 h-6 w-6" />
-          </Button>
-        </div>
-      </section>
-
-      {/* Why Liv8AI Section */}
-      <section className="py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-blue-50/20 dark:to-blue-950/20">
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Liv8AI?</h2>
-            <p className="text-2xl text-muted-foreground mb-8">
-              You don't need more software. You need the systems that run your business.
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 mb-6 animate-pulse">
+              <Phone className="h-10 w-10 text-white" />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Book Your Free
+              <br />
+              AI Strategy Call
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Discover how AI can transform your business in just 30 minutes. 
+              No sales pitch - just actionable insights tailored to your industry.
             </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-red-400">We've seen it firsthand:</h3>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                    <span className="text-white text-xs">✕</span>
-                  </div>
-                  <p className="text-lg">Agencies drowning in support tickets</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                    <span className="text-white text-xs">✕</span>
-                  </div>
-                  <p className="text-lg">Coaches burning out trying to automate workflows</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                    <span className="text-white text-xs">✕</span>
-                  </div>
-                  <p className="text-lg">Founders stuck in setup hell with no results</p>
-                </div>
+            <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground mb-8">
+              <div className="flex items-center">
+                <Users className="h-4 w-4 mr-2" />
+                500+ Businesses Helped
               </div>
-              <div className="text-3xl font-bold text-cyan-400 mb-4">We solve that.</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6">At Liv8AI, we don't just consult — we build, implement, and run the backend for you:</h3>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <Zap className="h-5 w-5 text-cyan-400 mr-3" />
-                  <span>CRMs, Funnels, Automations (GoHighLevel, VBout, TaskMagic)</span>
-                </div>
-                <div className="flex items-center">
-                  <Zap className="h-5 w-5 text-cyan-400 mr-3" />
-                  <span>AI chat & email support (white-labeled or managed)</span>
-                </div>
-                <div className="flex items-center">
-                  <Zap className="h-5 w-5 text-cyan-400 mr-3" />
-                  <span>Sales systems, lead gen flows, appointment automation</span>
-                </div>
-                <div className="flex items-center">
-                  <Zap className="h-5 w-5 text-cyan-400 mr-3" />
-                  <span>Custom portals, workflows, and templates</span>
-                </div>
+              <div className="flex items-center">
+                <Star className="h-4 w-4 mr-2 text-yellow-500" />
+                4.9/5 Average Rating
+              </div>
+              <div className="flex items-center">
+                <Clock className="h-4 w-4 mr-2" />
+                30 Min Session
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Who We Help Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Who We Help</h2>
-            <p className="text-xl text-muted-foreground">You're a fit if you're a...</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Target,
-                title: "Digital Agency",
-                description: "Trying to scale without hiring a full ops team"
-              },
-              {
-                icon: Users,
-                title: "Coach/Consultant",
-                description: "Who needs more automation & fewer headaches"
-              },
-              {
-                icon: Zap,
-                title: "Startup Founder",
-                description: "Who wants to launch fast with done-for-you support"
-              },
-              {
-                icon: Shield,
-                title: "White-label Reseller",
-                description: "Who wants your own backend & brand"
-              }
-            ].map((item, index) => (
-              <Card key={index} className="bg-background border-border card-hover text-center">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="h-8 w-8 text-cyan-400" />
-                  </div>
-                  <CardTitle className="text-xl font-bold">{item.title}</CardTitle>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Form */}
+            <div className="order-2 lg:order-1">
+              <Card className="border-2 border-primary/20 shadow-2xl">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl font-bold">
+                    Schedule Your Free Call
+                  </CardTitle>
+                  <p className="text-muted-foreground">
+                    Fill out the form below and we'll contact you within 24 hours
+                  </p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">The Liv8AI Engine</h2>
-            <p className="text-2xl text-muted-foreground">"Operations as a Service"</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {plans.map((plan, index) => (
-              <Card key={index} className={`bg-background border-border relative ${plan.popular ? 'ring-2 ring-cyan-400 scale-105' : ''}`}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-cyan-400 text-black px-6 py-1 font-semibold">Most Popular</Badge>
+                  {/* MakeForms Embed */}
+                  <div id="makeform-embed" className="min-h-[400px]">
+                    {!formLoaded && (
+                      <div className="flex items-center justify-center h-64">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                      </div>
+                    )}
                   </div>
-                )}
-                <CardHeader className="text-center pb-2">
-                  <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
-                  <p className="text-muted-foreground text-sm mb-4">{plan.target}</p>
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-4xl font-bold text-cyan-400">{plan.price}</span>
-                    <span className="text-muted-foreground ml-1">{plan.period}</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <Check className="h-5 w-5 text-cyan-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    onClick={handleBookCall}
-                    className={`w-full ${plan.popular ? 'bg-cyan-400 text-black hover:bg-cyan-300' : 'bg-primary text-primary-foreground hover:bg-primary/90'}`}
-                  >
-                    Get Started
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">What Makes Us Different?</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-red-900/20 border-red-500/30">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-red-400 text-center">Others Talk</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="text-center text-muted-foreground">Strategy sessions</div>
-                <div className="text-center text-muted-foreground">Hourly consultants</div>
-                <div className="text-center text-muted-foreground">AI fluff</div>
-                <div className="text-center text-muted-foreground">Advice</div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-green-900/20 border-green-500/30">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-green-400 text-center">We Execute</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="text-center text-green-400">Plug-and-play systems</div>
-                <div className="text-center text-green-400">Monthly white-label packages</div>
-                <div className="text-center text-green-400">Actual workflow bots that close deals</div>
-                <div className="text-center text-green-400">Done-for-you, branded operations</div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Proof in Action</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-background border-border">
-                <CardContent className="p-6">
-                  <div className="flex text-yellow-400 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">"{testimonial.quote}"</p>
-                  <div>
-                    <div className="font-semibold">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  
+                  {/* Next Steps */}
+                  <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+                    <p className="text-sm text-muted-foreground text-center">
+                      After submitting this form, you'll be redirected to schedule your call time.
+                    </p>
+                    <div className="mt-4 text-center">
+                      <Link href="/schedule">
+                        <Button variant="outline" className="w-full">
+                          Or Schedule Directly
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-cyan-900/50 to-purple-900/50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Book Your Free Strategy Call</h2>
-          <p className="text-xl text-gray-300 mb-12">
-            Let's build your backend together. You bring the vision — we bring the system.
-          </p>
-          
-          <Button
-            onClick={handleBookCall}
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-xl font-semibold pulse-glow"
-          >
-            Book My Strategy Call Now
-            <ArrowRight className="ml-3 h-6 w-6" />
-          </Button>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h2>
-          </div>
-
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="bg-background border-border">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Guarantee Section */}
-      <section className="py-20 bg-card">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl p-8 border border-green-500/30">
-            <Shield className="h-16 w-16 text-green-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-4">100% Satisfaction Guarantee</h2>
-            <p className="text-lg text-muted-foreground">
-              We don't believe in half-baked tech. If you're not seeing clear progress and real results in your first 30 days, we'll rebuild your system or refund your setup fee — no questions asked.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-background py-12 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-2">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 relative mr-3">
-                  <div className="absolute inset-0 rounded-full border-2 border-cyan-400 animate-spin [animation-duration:8s]"></div>
-                  <div className="absolute inset-1 rounded-full border border-cyan-300 animate-spin [animation-duration:6s] [animation-direction:reverse]"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-cyan-400 font-bold">8</span>
-                  </div>
-                </div>
-                <span className="text-3xl font-bold">
-                  LIV<span className="gradient-text">8AI</span>
-                </span>
+            {/* Right Column - Benefits & Testimonials */}
+            <div className="order-1 lg:order-2">
+              {/* Benefits */}
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                {benefits.map((benefit, index) => {
+                  const IconComponent = benefit.icon;
+                  return (
+                    <Card key={index} className="border-border/50 hover:border-primary/50 transition-all duration-300">
+                      <CardHeader className="pb-3">
+                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${benefit.color} mb-3 flex items-center justify-center`}>
+                          <IconComponent className="h-6 w-6 text-white" />
+                        </div>
+                        <CardTitle className="text-lg font-semibold">{benefit.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <p className="text-muted-foreground text-sm">
+                          {benefit.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
-              <p className="text-muted-foreground mb-6 text-lg leading-relaxed max-w-md">
-                Built to Elevate You - Transforming businesses with intelligent AI solutions and automated operations.
-              </p>
-            </div>
 
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Services</h4>
-              <ul className="space-y-3">
-                <li className="text-muted-foreground">AI Automation</li>
-                <li className="text-muted-foreground">Backend Operations</li>
-                <li className="text-muted-foreground">White-label Solutions</li>
-                <li className="text-muted-foreground">Support Systems</li>
-              </ul>
+              {/* Testimonials */}
+              <div className="space-y-4">
+                {testimonials.map((testimonial, index) => (
+                  <Card key={index} className="border-border/50">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center mb-3">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
+                        ))}
+                      </div>
+                      <p className="text-muted-foreground mb-3 italic">
+                        "{testimonial.content}"
+                      </p>
+                      <div className="flex items-center">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center mr-3">
+                          <span className="text-white font-semibold text-sm">
+                            {testimonial.name.split(' ').map(n => n[0]).join('')}
+                          </span>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-sm">{testimonial.name}</p>
+                          <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contact</h4>
-              <ul className="space-y-3">
-                <li>
-                  <Button
-                    onClick={handleBookCall}
-                    variant="ghost"
-                    className="p-0 h-auto text-muted-foreground hover:text-primary"
-                  >
-                    Book Strategy Call
-                  </Button>
-                </li>
-                <li className="text-muted-foreground">San Francisco, CA</li>
-                <li className="text-muted-foreground">contact@liv8ai.com</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-border pt-8 mt-8 text-center">
-            <p className="text-muted-foreground">
-              &copy; 2025 LIV8AI. All Rights Reserved. Built to Elevate You.
-            </p>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }

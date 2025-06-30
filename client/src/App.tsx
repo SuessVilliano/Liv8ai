@@ -8,6 +8,9 @@ import Home from "@/pages/home";
 import BookACall from "@/pages/book-a-call";
 import BuiltInMinutes from "@/pages/built-in-minutes";
 import Portfolio from "@/pages/portfolio";
+import Affiliate from "@/pages/affiliate";
+import Schedule from "@/pages/schedule";
+import ThankYou from "@/pages/thank-you";
 import ExitPopup from "@/components/exit-popup";
 import { useExitPopup } from "@/hooks/use-exit-popup";
 
@@ -19,6 +22,9 @@ function Router() {
       <Route path="/book-a-call" component={BookACall} />
       <Route path="/built-in-minutes" component={BuiltInMinutes} />
       <Route path="/portfolio" component={Portfolio} />
+      <Route path="/affiliate" component={Affiliate} />
+      <Route path="/schedule" component={Schedule} />
+      <Route path="/thank-you" component={ThankYou} />
     </Switch>
   );
 }

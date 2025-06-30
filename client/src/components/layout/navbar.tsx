@@ -79,6 +79,13 @@ export default function Navbar() {
                   Built in Minutes
                 </span>
               </Link>
+              <a 
+                href="https://liv8.pushlapgrowth.com/login" 
+                target="_blank" 
+                className="nav-link text-foreground hover:text-primary font-medium px-3 py-2"
+              >
+                Affiliate Login
+              </a>
               <Button
                 onClick={toggleTheme}
                 variant="ghost"
@@ -87,12 +94,11 @@ export default function Navbar() {
               >
                 {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               </Button>
-              <Button
-                onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                Let's Talk
-              </Button>
+              <Link href="/book-a-call">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  Let's Talk
+                </Button>
+              </Link>
             </div>
           </div>
 
