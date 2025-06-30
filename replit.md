@@ -34,7 +34,8 @@ A modern AI agency website for LIV8AI showcasing innovative digital services thr
 **2025-01-30**: ✅ Completed affiliate tracking system with Google Tag Manager
 - ✅ Added Google Tag Manager (GTM-5J6K6Q8S) to all pages - head and body tags
 - ✅ Fixed footer Link import error - affiliate links now functional
-- ✅ Updated TidyCal URL from broken "liv8ai/ai-strategy-call" to "jamaur-smith"
+- ✅ Updated TidyCal URL to correct "liv8/claritycall" with proper embed code
+- ✅ Updated phone number from placeholder to real number (404) 495-5397
 - ✅ Enhanced MakeForms error handling to prevent runtime popup errors
 - ✅ Added PushLap Growth affiliate tracking script to all pages (Program ID: 9acd7ded-50dc-4b98-b698-c78edc0481b3)
 - ✅ Created affiliate page (/affiliate) with direct PushLap Growth registration

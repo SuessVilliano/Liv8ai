@@ -154,13 +154,8 @@ export default function Schedule() {
                 <CardContent>
                   {/* TidyCal Embed */}
                   <div className="w-full">
-                    <iframe 
-                      src="https://tidycal.com/jamaur-smith" 
-                      width="100%" 
-                      height="600" 
-                      style={{ border: 'none', borderRadius: '8px' }}
-                      title="Schedule Your AI Strategy Call"
-                    ></iframe>
+                    <div className="tidycal-embed" data-path="liv8/claritycall"></div>
+                    <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
                   </div>
                   
                   {/* Instructions */}

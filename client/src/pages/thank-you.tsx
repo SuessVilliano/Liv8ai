@@ -232,7 +232,7 @@ export default function ThankYou() {
                   <strong>Email:</strong> hello@liv8ai.com
                 </div>
                 <div className="text-sm text-green-200">
-                  <strong>Phone:</strong> (555) 123-4567
+                  <strong>Phone:</strong> (404) 495-5397
                 </div>
               </div>
             </div>
