@@ -11,6 +11,7 @@ import Portfolio from "@/pages/portfolio";
 import Affiliate from "@/pages/affiliate";
 import Schedule from "@/pages/schedule";
 import ThankYou from "@/pages/thank-you";
+import FormSubmitted from "@/pages/form-submitted";
 import ExitPopup from "@/components/exit-popup";
 import { useExitPopup } from "@/hooks/use-exit-popup";
 
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/affiliate" component={Affiliate} />
       <Route path="/schedule" component={Schedule} />
       <Route path="/thank-you" component={ThankYou} />
+      <Route path="/form-submitted" component={FormSubmitted} />
     </Switch>
   );
 }

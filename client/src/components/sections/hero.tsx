@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Sparkles } from "lucide-react";
+import { ArrowRight, Calendar, Sparkles, Users } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Hero() {
@@ -33,24 +33,34 @@ export default function Hero() {
             We build in minutes what others drag out for months. From consultation to creation—your vision becomes reality faster than you thought possible.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:0.4s]">
-            <Link href="/built-in-minutes">
+            <Link href="/book-a-call">
               <Button
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold pulse-glow border border-cyan-400"
               >
-                Built in Minutes
-                <Sparkles className="ml-2 h-5 w-5" />
+                Book Strategy Call
+                <Calendar className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button
-              onClick={() => window.open('https://sqr.co/LIV8DigitalCallForm/', '_blank')}
-              variant="outline"
-              size="lg"
-              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-background px-8 py-4 text-lg font-semibold"
-            >
-              Book Strategy Call
-              <Calendar className="ml-2 h-5 w-5" />
-            </Button>
+            <Link href="/affiliate">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-background px-8 py-4 text-lg font-semibold"
+              >
+                Join Affiliate Program
+                <Users className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+          
+          {/* Additional Navigation */}
+          <div className="flex justify-center mt-6 animate-fade-in-up [animation-delay:0.6s]">
+            <Link href="/built-in-minutes">
+              <span className="text-cyan-400 hover:text-cyan-300 underline text-lg font-medium cursor-pointer">
+                See How We Build Apps in Minutes →
+              </span>
+            </Link>
           </div>
         </div>
 

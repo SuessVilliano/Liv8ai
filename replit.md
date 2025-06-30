@@ -42,10 +42,30 @@ A modern AI agency website for LIV8AI showcasing innovative digital services thr
 - ✅ LocalStorage fallback for cross-page email/name tracking
 
 ## Affiliate System Flow
-1. **Affiliate Page** → Direct link to PushLap Growth
-2. **Book-a-Call** → MakeForms embedded form
-3. **Schedule** → TidyCal embedded scheduler
-4. **Thank You** → Confirmation page with email instructions
+1. **Affiliate Page** (/affiliate) → Direct link to PushLap Growth registration
+2. **Book-a-Call** (/book-a-call) → MakeForms embedded form (ID: 685197ffe60395ec724f4244)
+3. **Form Submitted** (/form-submitted) → Auto-redirects to schedule after tracking
+4. **Schedule** (/schedule) → TidyCal scheduler (liv8ai/ai-strategy-call)
+5. **Thank You** (/thank-you) → Final conversion tracking and instructions
+
+## Configuration URLs for External Services
+
+### MakeForms Configuration
+- **Form ID**: 685197ffe60395ec724f4244
+- **Redirect URL**: `https://your-domain.com/form-submitted`
+- **Note**: Configure form to redirect to /form-submitted page after submission
+
+### TidyCal Configuration  
+- **Scheduler URL**: tidycal.com/liv8ai/ai-strategy-call
+- **Redirect After Booking**: `https://your-domain.com/thank-you?email={{email}}&name={{name}}`
+- **Note**: Configure TidyCal to pass email and name parameters for affiliate tracking
+
+### Complete Funnel Flow
+1. Homepage → Book Strategy Call button → /book-a-call
+2. /book-a-call → MakeForms submission → /form-submitted  
+3. /form-submitted → Auto-redirect (3s) → /schedule
+4. /schedule → TidyCal booking → /thank-you
+5. /thank-you → Conversion tracking complete
 
 ## User Preferences
 - Modern, futuristic VR-style design aesthetic

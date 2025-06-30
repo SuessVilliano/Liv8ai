@@ -172,6 +172,14 @@ export default function Schedule() {
                       <li>• Meeting link will be provided 24 hours before the call</li>
                       <li>• Have your business goals and questions ready</li>
                     </ul>
+                    <div className="mt-4 p-3 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                      <p className="text-xs text-green-700 dark:text-green-300">
+                        <strong>Note:</strong> TidyCal should be configured to redirect to: 
+                        <code className="bg-green-100 dark:bg-green-900 px-1 rounded">
+                          https://your-domain.com/thank-you?email=&#123;&#123;email&#125;&#125;&name=&#123;&#123;name&#125;&#125;
+                        </code>
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
