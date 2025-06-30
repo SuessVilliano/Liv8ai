@@ -31,14 +31,18 @@ A modern AI agency website for LIV8AI showcasing innovative digital services thr
 - **Styling**: Tailwind CSS with custom CSS variables for theming
 
 ## Recent Changes
-**2025-01-30**: ✅ Completed affiliate tracking system
-- ✅ Added PushLap Growth affiliate tracking script to all pages
+**2025-01-30**: ✅ Completed affiliate tracking system with Google Tag Manager
+- ✅ Added Google Tag Manager (GTM-5J6K6Q8S) to all pages - head and body tags
+- ✅ Fixed footer Link import error - affiliate links now functional
+- ✅ Updated TidyCal URL from broken "liv8ai/ai-strategy-call" to "jamaur-smith"
+- ✅ Enhanced MakeForms error handling to prevent runtime popup errors
+- ✅ Added PushLap Growth affiliate tracking script to all pages (Program ID: 9acd7ded-50dc-4b98-b698-c78edc0481b3)
 - ✅ Created affiliate page (/affiliate) with direct PushLap Growth registration
 - ✅ Enhanced book-a-call page with MakeForms embedded form (ID: 685197ffe60395ec724f4244)
-- ✅ Built schedule page with TidyCal integration (liv8ai/ai-strategy-call)
+- ✅ Built schedule page with TidyCal integration (jamaur-smith/ai-strategy-call)
 - ✅ Created thank-you page with conversion tracking and email instructions
-- ✅ Added affiliate login link to navbar
-- ✅ Implemented complete funnel flow with affiliate tracking at each step
+- ✅ Added affiliate program and login links to footer for easy access
+- ✅ Implemented complete funnel flow with dual tracking (GTM + PushLap)
 - ✅ LocalStorage fallback for cross-page email/name tracking
 
 ## Affiliate System Flow
