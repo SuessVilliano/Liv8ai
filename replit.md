@@ -32,6 +32,8 @@ A modern AI agency website for LIV8AI showcasing innovative digital services thr
 
 ## Recent Changes
 **2025-01-30**: ✅ Completed affiliate tracking system with Google Tag Manager
+- ✅ Created new appointment confirmation page (/appointment-confirmed) with dual tracking
+- ✅ Enhanced conversion tracking with both PushLap Growth and Google Tag Manager
 - ✅ Added Google Tag Manager (GTM-5J6K6Q8S) to all pages - head and body tags
 - ✅ Fixed footer Link import error - affiliate links now functional
 - ✅ Updated TidyCal URL to correct "liv8/claritycall" with proper embed code
@@ -66,11 +68,17 @@ A modern AI agency website for LIV8AI showcasing innovative digital services thr
 - **Note**: Configure TidyCal to pass email and name parameters for affiliate tracking
 
 ### Complete Funnel Flow
+**Option A - Full Funnel:**
 1. Homepage → Book Strategy Call button → /book-a-call
 2. /book-a-call → MakeForms submission → /form-submitted  
 3. /form-submitted → Auto-redirect (3s) → /schedule
 4. /schedule → TidyCal booking → /thank-you
 5. /thank-you → Conversion tracking complete
+
+**Option B - Direct Routing (Recommended):**
+1. MakeForms → Direct redirect to TidyCal
+2. TidyCal → Direct redirect to /appointment-confirmed
+3. /appointment-confirmed → Dual conversion tracking (PushLap + GTM)
 
 ## User Preferences
 - Modern, futuristic VR-style design aesthetic

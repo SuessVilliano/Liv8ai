@@ -48,10 +48,14 @@ export default function BookACall() {
     }
 
     return () => {
-      // Only remove if we added it
-      const scriptToRemove = document.querySelector('script[src*="makeforms.io"]');
-      if (scriptToRemove && scriptToRemove === script) {
-        document.head.removeChild(script);
+      // Cleanup - remove script if it exists
+      try {
+        const scriptToRemove = document.querySelector('script[src*="makeforms.io"]');
+        if (scriptToRemove && scriptToRemove.parentNode) {
+          scriptToRemove.parentNode.removeChild(scriptToRemove);
+        }
+      } catch (error) {
+        // Ignore cleanup errors
       }
     };
   }, []);
