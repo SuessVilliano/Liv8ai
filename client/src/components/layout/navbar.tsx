@@ -28,12 +28,12 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { label: "Home", id: "home" },
-    { label: "About", id: "about" },
-    { label: "Services", id: "services" },
-    { label: "Projects", id: "projects" },
-    { label: "Blog", id: "blog" },
-    { label: "Careers", id: "careers" },
+    { label: "Home", id: "home", href: "/" },
+    { label: "About", id: "about", href: "/#about" },
+    { label: "Services", id: "services", href: "/#services" },
+    { label: "Projects", id: "projects", href: "/portfolio" },
+    { label: "Blog", id: "blog", href: "/#blog" },
+    { label: "Careers", id: "careers", href: "/#careers" },
   ];
 
   return (
@@ -66,13 +66,11 @@ export default function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="nav-link text-foreground hover:text-primary font-medium px-3 py-2"
-                >
-                  {link.label}
-                </button>
+                <Link key={link.id} href={link.href}>
+                  <span className="nav-link text-foreground hover:text-primary font-medium px-3 py-2 cursor-pointer">
+                    {link.label}
+                  </span>
+                </Link>
               ))}
               <Link href="/built-in-minutes">
                 <span className="nav-link text-foreground hover:text-primary font-medium px-3 py-2 cursor-pointer">
@@ -117,13 +115,14 @@ export default function Navbar() {
               <SheetContent side="right" className="bg-background">
                 <div className="flex flex-col space-y-4 mt-8">
                   {navLinks.map((link) => (
-                    <button
-                      key={link.id}
-                      onClick={() => scrollToSection(link.id)}
-                      className="text-left text-foreground hover:text-primary font-medium py-2"
-                    >
-                      {link.label}
-                    </button>
+                    <Link key={link.id} href={link.href}>
+                      <span 
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-left text-foreground hover:text-primary font-medium py-2 cursor-pointer block"
+                      >
+                        {link.label}
+                      </span>
+                    </Link>
                   ))}
                   <Link href="/built-in-minutes">
                     <span className="text-left text-foreground hover:text-primary font-medium py-2 cursor-pointer block">

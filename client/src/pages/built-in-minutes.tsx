@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, ArrowRight, Calendar, Star, Zap, Clock, Target, Users, Code, Sparkles, Play, MessageCircle } from "lucide-react";
-import LandingNavbar from "@/components/layout/landing-navbar";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
 import { Link } from "wouter";
 
 declare global {
@@ -114,7 +115,7 @@ export default function BuiltInMinutes() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <LandingNavbar />
+      <Navbar />
       
       {/* Hero Section */}
       <section className="hero-gradient pt-20 pb-16 relative overflow-hidden min-h-screen flex items-center dark:bg-gradient-to-br dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
@@ -542,7 +543,7 @@ export default function BuiltInMinutes() {
         </div>
       </section>
 
-
+      <Footer />
     </div>
   );
 }

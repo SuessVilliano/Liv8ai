@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, Video, CheckCircle, Users, Shield } from "lucide-react";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
 
 declare global {
   interface Window {
@@ -64,7 +66,8 @@ export default function Schedule() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-purple-50/20 dark:to-purple-950/20">
-      <div className="container mx-auto px-4 py-16">
+      <Navbar />
+      <div className="container mx-auto px-4 py-16 pt-24">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-16">
@@ -215,6 +218,7 @@ export default function Schedule() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

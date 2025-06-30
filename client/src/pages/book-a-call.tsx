@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Calendar, Clock, Video, CheckCircle, Phone, Users, Star } from "lucide-react";
 import { Link } from "wouter";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
 
 declare global {
   interface Window {
@@ -115,7 +117,8 @@ export default function BookACall() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-blue-50/20 dark:to-blue-950/20">
-      <div className="container mx-auto px-4 py-16">
+      <Navbar />
+      <div className="container mx-auto px-4 py-16 pt-24">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-16">
@@ -243,6 +246,7 @@ export default function BookACall() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
