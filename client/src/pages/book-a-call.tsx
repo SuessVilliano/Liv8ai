@@ -15,24 +15,44 @@ export default function BookACall() {
   const [formLoaded, setFormLoaded] = useState(false);
 
   useEffect(() => {
-    // Load MakeForms script
+    // Load MakeForms script with error handling
     const script = document.createElement('script');
     script.src = 'https://assets.makeforms.io/bundles/scripts/live/us/embed.js';
     script.async = true;
     script.onload = () => {
-      setFormLoaded(true);
-      // Initialize the embedded form
-      if (window.makeforms) {
-        new window.makeforms.Embed({ 
-          sourceId: "685197ffe60395ec724f4244", 
-          root: "makeform-embed" 
-        }).build();
+      try {
+        setFormLoaded(true);
+        // Initialize the embedded form
+        if (window.makeforms && window.makeforms.Embed) {
+          new window.makeforms.Embed({ 
+            sourceId: "685197ffe60395ec724f4244", 
+            root: "makeform-embed" 
+          }).build();
+        }
+      } catch (error) {
+        console.log('MakeForms initialization error:', error);
+        setFormLoaded(true); // Still show the form area
       }
     };
-    document.head.appendChild(script);
+    script.onerror = () => {
+      console.log('MakeForms script failed to load');
+      setFormLoaded(true);
+    };
+    
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src*="makeforms.io"]');
+    if (!existingScript) {
+      document.head.appendChild(script);
+    } else {
+      setFormLoaded(true);
+    }
 
     return () => {
-      document.head.removeChild(script);
+      // Only remove if we added it
+      const scriptToRemove = document.querySelector('script[src*="makeforms.io"]');
+      if (scriptToRemove && scriptToRemove === script) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 

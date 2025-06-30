@@ -1,13 +1,27 @@
 
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, ArrowRight, Calendar, Star, Zap, Clock, Target, Users, Code, Sparkles, Play, MessageCircle } from "lucide-react";
 import LandingNavbar from "@/components/layout/landing-navbar";
+import { Link } from "wouter";
+
+declare global {
+  interface Window {
+    createPushLapEmail: any;
+  }
+}
 
 export default function BuiltInMinutes() {
+  useEffect(() => {
+    // Track page visit for affiliate system
+    console.log('Built in Minutes page visited - affiliate tracking active');
+  }, []);
+
   const handleBookCall = () => {
-    window.open('https://us.makeforms.co/auitqnj/', '_blank');
+    // Redirect to our funnel instead of external form
+    window.location.href = '/book-a-call';
   };
 
 

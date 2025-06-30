@@ -1,5 +1,6 @@
 import { Brain, Linkedin, Twitter, Github, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -119,6 +120,22 @@ export default function Footer() {
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   Cookie Policy
+                </a>
+              </li>
+              <li>
+                <Link href="/affiliate">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                    Affiliate Program
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <a 
+                  href="https://liv8.pushlapgrowth.com/login" 
+                  target="_blank" 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Affiliate Login
                 </a>
               </li>
             </ul>

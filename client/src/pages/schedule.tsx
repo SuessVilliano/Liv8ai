@@ -155,7 +155,7 @@ export default function Schedule() {
                   {/* TidyCal Embed */}
                   <div className="w-full">
                     <iframe 
-                      src="https://tidycal.com/liv8ai/ai-strategy-call" 
+                      src="https://tidycal.com/jamaur-smith" 
                       width="100%" 
                       height="600" 
                       style={{ border: 'none', borderRadius: '8px' }}
