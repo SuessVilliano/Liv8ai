@@ -22,6 +22,7 @@ A modern AI agency website for LIV8AI showcasing innovative digital services thr
 - ✅ YouTube video integration for engagement
 - ✅ Immersive portfolio universe with 3D cards
 - ✅ Mobile-optimized layouts
+- ✅ LIV8 Support services landing page with tier-based pricing
 
 ## Architecture
 - **Client**: React SPA with component-based architecture
@@ -31,6 +32,14 @@ A modern AI agency website for LIV8AI showcasing innovative digital services thr
 - **Styling**: Tailwind CSS with custom CSS variables for theming
 
 ## Recent Changes
+**2025-01-30**: ✅ Added LIV8 Support services page
+- ✅ Created comprehensive support landing page (/support) with tier-based pricing
+- ✅ Added Support link to main navigation menu (desktop and mobile)
+- ✅ Implemented three-tier support structure: Essential ($197/mo), Proactive ($497/mo), Full-Service ($997/mo)
+- ✅ Added certification badges and workflow explanations
+- ✅ Integrated dual conversion tracking (GTM + PushLap Growth)
+- ✅ Fixed all navigation issues across pages with consistent Navbar component
+
 **2025-01-30**: ✅ Completed affiliate tracking system with Google Tag Manager
 - ✅ Created new appointment confirmation page (/appointment-confirmed) with dual tracking
 - ✅ Enhanced conversion tracking with both PushLap Growth and Google Tag Manager
