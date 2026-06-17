@@ -2,6 +2,14 @@
     "version": 2,
     "framework": "vite",
     "cleanUrls": true,
+    "redirects": [
+        {
+            "has": [{"type": "host", "value": "builtinminutes.com"}],
+            "source": "/",
+            "destination": "/built-in-minutes",
+            "permanent": false
+        }
+    ],
     "rewrites": [
         { "source": "/api/(.*)", "destination": "/api/index.ts" },
         { "source": "/((?!api/).*)", "destination": "/index.html" }
