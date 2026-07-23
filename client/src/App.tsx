@@ -9,6 +9,7 @@ import BookACall from "@/pages/book-a-call";
 import BuiltInMinutes from "@/pages/built-in-minutes";
 import Portfolio from "@/pages/portfolio";
 import Support from "@/pages/support";
+import HighLevelOperations from "@/pages/highlevel-operations";
 import Affiliate from "@/pages/affiliate";
 import Schedule from "@/pages/schedule";
 import ThankYou from "@/pages/thank-you";
@@ -26,6 +27,9 @@ function Router() {
       <Route path="/built-in-minutes" component={BuiltInMinutes} />
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/support" component={Support} />
+      <Route path="/highlevel" component={HighLevelOperations} />
+      <Route path="/highlevel-operations" component={HighLevelOperations} />
+      <Route path="/ops" component={HighLevelOperations} />
       <Route path="/affiliate" component={Affiliate} />
       <Route path="/schedule" component={Schedule} />
       <Route path="/thank-you" component={ThankYou} />
