@@ -1,17 +1,28 @@
 {
-    "version": 2,
-    "framework": "vite",
-    "cleanUrls": true,
-    "redirects": [
+  "version": 2,
+  "framework": "vite",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "has": [
         {
-            "has": [{"type": "host", "value": "builtinminutes.com"}],
-            "source": "/",
-            "destination": "/built-in-minutes",
-            "permanent": false
+          "type": "host",
+          "value": "builtinminutes.com"
         }
-    ],
-    "rewrites": [
-        { "source": "/api/(.*)", "destination": "/api/index.ts" },
-        { "source": "/((?!api/).*)", "destination": "/index.html" }
-    ]
+      ],
+      "source": "/",
+      "destination": "/built-in-minutes",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
 }
