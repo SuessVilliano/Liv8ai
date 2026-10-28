@@ -1,8 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { registerLaunchpadRoutes } from "./launchpad-routes";
-import { registerAIRoutes } from "./ai-routes";
+import { registerLaunchpadRoutes } from "./launchpad-routes.js";
+import { registerAIRoutes } from "./ai-routes.js";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   registerLaunchpadRoutes(app);

@@ -10,7 +10,8 @@
     "check": "tsc",
     "db:push": "drizzle-kit push",
     "test": "node --import tsx --test tests/*.test.ts",
-    "launchpad:migrate": "node --import tsx scripts/migrate-launchpad.ts"
+    "launchpad:migrate": "node --import tsx scripts/migrate-launchpad.ts",
+    "content:package": "node --import tsx scripts/build-content-package.ts"
   },
   "dependencies": {
     "@genkit-ai/core": "^1.12.0",

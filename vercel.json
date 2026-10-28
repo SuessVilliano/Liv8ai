@@ -1,7 +1,6 @@
 {
   "version": 2,
   "framework": "vite",
-  "cleanUrls": true,
   "redirects": [
     {
       "has": [
@@ -24,5 +23,6 @@
       "source": "/(.*)",
       "destination": "/"
     }
-  ]
+  ],
+  "cleanUrls": true
 }

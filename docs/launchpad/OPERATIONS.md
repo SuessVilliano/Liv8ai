@@ -67,3 +67,21 @@ The seller guide was located in the user's sent email and read privately. It is 
 `npm run check`, `npm test`, `npm run build`.
 
 Do not report a full funnel or production CRM test as passed while DATABASE_URL and the correct location credentials are absent. Personal mode and production pages can be independently tested.
+
+## Preserved production template
+
+A private HeyGen template was created from the actual bounty reference, without starting video generation:
+
+- Template: `560bcbe30cb3406bb47e53bc2595cc23`
+- Exact original avatar: `b956fa5693aa4a36a9b9e07d191ae912` (Avatar IV)
+- Exact original HeyGen voice: `a97aaaf200134164bd70dbbb4728a950`
+- Original layout: 9:16; background `#f6f6fc`; pitch 0, speed 1, volume 1; no background audio track in the template.
+- Variables: `narration` (script text), `presenter` (original character), `voice` (original TTS node).
+
+This establishes the actual HeyGen settings. The connection does not reveal the mapping from its voice ID to either ElevenLabs workspace META SV voice. Do not claim that mapping has been verified. The private voice catalog returned no matching entries. The old bounty amounts remain in the private source template only; they were not carried into the public launch script or site.
+
+Preview testing exposed the repository's existing cleanUrls/rewrite mismatch: a clean URL configuration must rewrite SPA paths to `/`, not `/index.html`, and server API rewrites must target the extensionless function route. Updated Vercel routing preserves clean URLs and the builtinminutes.com host redirect.
+
+Browser QA confirmed personal onboarding, offer rendering, paid-sale logging, the first milestone and a challenge completion. The global exit popup is suppressed only inside `/launchpad` so it does not interrupt the product; existing pages keep the popup.
+
+The first routed API invocation also exposed an existing Node ESM import problem (`server/routes` lacked a runtime extension). Server entrypoint imports now use `.js` ESM specifiers, with TypeScript resolving the corresponding source files. The unused memory-storage import was removed from route registration. The CRM adapter does not change a contact's global DND or imply SMS permission.

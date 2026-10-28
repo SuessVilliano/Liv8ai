@@ -2,8 +2,8 @@ import type { Express, Request, Response, NextFunction } from 'express';
 import { randomBytes, randomUUID, scrypt as scryptCallback, timingSafeEqual, createHash } from 'node:crypto';
 import { promisify } from 'node:util';
 import { z } from 'zod';
-import { query } from './launchpad-db';
-import { registrationSchema, profileSchema, saleSchema, postSchema, announcementSchema, challenges, lessons, reachedMilestones } from '../shared/launchpad';
+import { query } from './launchpad-db.js';
+import { registrationSchema, profileSchema, saleSchema, postSchema, announcementSchema, challenges, lessons, reachedMilestones } from '../shared/launchpad.js';
 const scrypt=promisify(scryptCallback);
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex');
 const wrap=(fn:(req:Request,res:Response)=>Promise<any>)=>(req:Request,res:Response,next:NextFunction)=>{Promise.resolve(fn(req,res)).catch(next);};
@@ -58,7 +58,7 @@ export function registerLaunchpadRoutes(app:Express){
   const rows=await query("UPDATE lp_outbox SET status='processing',attempts=attempts+1 WHERE id IN (SELECT id FROM lp_outbox WHERE status IN ('pending','failed') AND attempts<5 ORDER BY created_at LIMIT 3 FOR UPDATE SKIP LOCKED) RETURNING *");
   let sent=0;for(const row of rows){try{
     const members=await query('SELECT email,profile FROM lp_members WHERE id=$1',[row.member_id]);const m=members[0];
-    const response=await fetch('https://services.leadconnectorhq.com/contacts/upsert',{method:'POST',headers:{Authorization:`Bearer ${process.env.GHL_API_KEY}`,Version:'2021-07-28','Content-Type':'application/json'},body:JSON.stringify({locationId:process.env.GHL_LOCATION_ID,email:m.email,name:m.profile.name,source:'LIV8 AI Founders Launchpad',tags:['liv8-founder',...(m.profile.emailConsent?['liv8-email-opt-in']:[])],dnd:!m.profile.emailConsent}),signal:AbortSignal.timeout(12000)});
+    const response=await fetch('https://services.leadconnectorhq.com/contacts/upsert',{method:'POST',headers:{Authorization:`Bearer ${process.env.GHL_API_KEY}`,Version:'2021-07-28','Content-Type':'application/json'},body:JSON.stringify({locationId:process.env.GHL_LOCATION_ID,email:m.email,name:m.profile.name,source:'LIV8 AI Founders Launchpad',tags:['liv8-founder',...(m.profile.emailConsent?['liv8-email-opt-in']:[])]}),signal:AbortSignal.timeout(12000)});
     if(!response.ok)throw new Error(`HighLevel HTTP ${response.status}`);
     await query("UPDATE lp_outbox SET status='sent',error=NULL WHERE id=$1",[row.id]);sent++;
    }catch(e){await query("UPDATE lp_outbox SET status='failed',error=$2 WHERE id=$1",[row.id,e instanceof Error?e.message:'Sync failed']);}}

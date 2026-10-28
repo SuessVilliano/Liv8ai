@@ -1,0 +1,15 @@
+HighLevel AI after LevelUp 2026: what founders should verify
+
+Before choosing an AI plan, identify who is using the tool: an agency user or a sub-account user. That distinction affects coverage. HighLevel’s updated AI Product Pricing page separates assistants used to create and build from agents used for ongoing business tasks. Supported agency-user assistants are included subject to fair use. Ongoing agents remain paid.
+
+The AI Employee Starter subscription is a sub-account product. Current official documentation lists it at $20 per month per sub-account and limits availability to agencies on the $497 Founder plan. That does not make the agency subscription $20, and it does not include Conversation AI or Voice AI usage allowances. Check the exact product section before quoting a client.
+
+Fair use and extra usage matter. Current public documentation says included usage pauses by default at the allowance. To continue using supported products at pay-per-use rates, an agency must enable Extra Usage. This is a material distinction from saying that every account automatically keeps running at an additional charge.
+
+A subscription also does not erase every operating cost. Phone System charges remain separate from Voice AI coverage. AI Studio hosting is distinct from generation coverage. Verify current in-app billing, limits, account permissions and availability before implementing a workflow.
+
+Build a small test using sample data. Confirm who can access the feature, what it does, what approvals it requests and which action creates a charge. Record the real screen only after the test succeeds. Keep private contacts and credentials outside the recording.
+
+Use the LIV8 AI Founder’s Launchpad to define the customer problem, work through a practical challenge and track your own progress. The personal workspace is available in-browser. Member community and CRM services depend on their connections. Sales milestones are learning goals and do not guarantee financial results.
+
+Sources: HighLevel AI Product Pricing; AI Employee: Access, Rebilling and Reselling; official LevelUp 2026 release index. Checked October 27, 2026. Recheck before publication.

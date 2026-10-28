@@ -1,0 +1,26 @@
+[Opening: AI twin; real Launchpad overview]
+Welcome to Elevate AI. Today we will turn a broad business idea into a founder workflow you can actually use. We will define one offer, open a personal workspace, track a paid sale using sample information, and build a checklist for the CRM handoff. This walkthrough uses demonstration data. It does not promise sales or earnings. Member services are still pending their service connections.
+
+[Screen: onboarding]
+Start at liv8ai dot com slash launchpad. Choose Start your launchpad. Personal mode stays in this browser. It does not create a member account or put your information into the CRM. For this example, the business is Sample Studio. The audience is local service businesses. The problem is inconsistent lead follow-up. Our offer is a scoped setup and handoff, with a clear delivery boundary. Notice that we are writing an outcome we can explain, not promising a revenue result. Set the next milestone to one paid sale and create the workspace.
+
+[Screen: overview and challenge]
+The overview keeps three things together: the offer, your recorded sales and the next action. Open Challenge. Day one is about clarity. Name one audience, one problem and one measurable outcome. Mark it complete only after you have done the work. Day two asks for a small demo with sample data. Day three asks for feedback through permission-based conversations. You can move at your own pace; the seven days are a structure, not a guarantee.
+
+[Screen: library]
+Open Library and search for offer. Expand the playbook. Choose a recurring problem, write the deliverables and boundaries, then interview potential customers before building more. Now search for CRM. The important handoff is not just a form submission. You need the original source, a useful stage, explicit email permission and a way to respect an opt-out. A signup never gives automatic permission for marketing texts or AI calls.
+
+[Screen: milestone log]
+Open Milestones. We are adding a sample paid project, clearly labeled as a demonstration. In a real workspace, record a sale only when payment is received. Do not put customer emails, payment details or sensitive information in the label. The thresholds are one, ten, one hundred and one thousand paid sales. These are self-reported counts, not verified HighLevel affiliate commissions. Remove the demonstration sale after testing.
+
+[Screen: referrals]
+Launchpad member referrals and HighLevel affiliate attribution are separate systems. A Launchpad invite code can attribute a member signup after member services are connected. It is not a HighLevel affiliate link and creates no commission entitlement. Use the exact approved HighLevel URL when promoting HighLevel. Place clear commission and other material-connection disclosures beside it, and use both spoken and visual disclosures near the beginning of affiliate videos. Never ask a current customer to cancel and reaffiliate.
+
+[Screen: official public pricing page; no billing changes]
+Before using AI for delivery, check the official pricing page and your actual account. Agency-user assistants and paid agents have different coverage. Fair use still applies. The sub-account Starter subscription is distinct from an agency subscription. A plan name does not mean every action, call or hosting resource is free. Current documentation says included usage pauses by default at the allowance. Extra Usage must be enabled for supported pay-per-use continuation. Do not change billing settings while following a tutorial unless you understand the costs.
+
+[Blocked chapter: do not render as a completed demo]
+The live HighLevel integration chapter must be recorded after the correct LIV8 AI location, credentials, database and workflow permissions are configured. Demonstrate a tagged test founder, verified source, optional email consent, a successful CRM sync and an opt-out test. Until then, keep this chapter as a production instruction and do not claim the automation is live.
+
+[Screen: export workspace]
+Return to the workspace and choose Export. Keep that file somewhere you control. Personal data is local to the browser; clearing browser storage removes it. Your next action is simple: write the offer, build one useful demo and ask for feedback. Visit the Founder’s Launchpad when you are ready to do the next piece of work.
