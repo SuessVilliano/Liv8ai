@@ -1,5 +1,5 @@
 import { Express, Request, Response } from 'express';
-import { BusinessConsultant, SolutionGenerator } from './genkit-config';
+import { BusinessConsultant, SolutionGenerator } from './genkit-config.js';
 
 const consultant = new BusinessConsultant();
 const solutionGen = new SolutionGenerator();

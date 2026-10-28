@@ -1,0 +1,138 @@
+[
+  {
+    "id": "launch-short",
+    "status": "draft",
+    "targetDate": "2026-10-29",
+    "format": "short",
+    "title": "Meet your LIV8 AI Founder’s Launchpad",
+    "description": "Product launch explainer with real Launchpad screen footage. No paid referral link currently included.\n\nExplore the LIV8 AI Founder’s Launchpad: https://www.liv8ai.com/launchpad\nOfficial source: https://www.gohighlevel.com/affiliate-policy/program-rules\nSales milestones are learning goals. No earnings are guaranteed.\n\nBefore publication: add all applicable material-connection disclosures at the beginning; use an exact approved paid referral URL only after eligibility and relationship review.",
+    "youtube": {
+      "visibility": "private",
+      "tags": [
+        "LIV8 AI",
+        "AI founders",
+        "LevelUp 2026",
+        "business workflows"
+      ]
+    },
+    "social": {
+      "status": "draft",
+      "caption": "Meet your LIV8 AI Founder’s Launchpad. Learn the workflow, check the source, and take one practical next step. https://www.liv8ai.com/launchpad?utm_source=social&utm_medium=organic&utm_campaign=levelup2026",
+      "platforms": [
+        "YouTube",
+        "Instagram",
+        "Facebook",
+        "LinkedIn"
+      ]
+    },
+    "requiredAssets": [
+      "verified avatar/voice",
+      "real screen recording",
+      "timed captions",
+      "reviewed thumbnail"
+    ],
+    "publishBlocked": true
+  },
+  {
+    "id": "ai-pricing-short",
+    "status": "draft",
+    "targetDate": "2026-10-30",
+    "format": "short",
+    "title": "LevelUp 2026: included AI vs paid agents",
+    "description": "Separate agency-user AI assistants, sub-account subscriptions, fair use, Extra Usage and paid agents. Pending in-app verification and relationship disclosure.\n\nExplore the LIV8 AI Founder’s Launchpad: https://www.liv8ai.com/launchpad\nOfficial source: https://help.gohighlevel.com/support/solutions/articles/155000006652-ai-product\nSales milestones are learning goals. No earnings are guaranteed.\n\nBefore publication: add all applicable material-connection disclosures at the beginning; use an exact approved paid referral URL only after eligibility and relationship review.",
+    "youtube": {
+      "visibility": "private",
+      "tags": [
+        "LIV8 AI",
+        "AI founders",
+        "LevelUp 2026",
+        "business workflows"
+      ]
+    },
+    "social": {
+      "status": "draft",
+      "caption": "LevelUp 2026: included AI vs paid agents. Learn the workflow, check the source, and take one practical next step. https://www.liv8ai.com/launchpad?utm_source=social&utm_medium=organic&utm_campaign=levelup2026",
+      "platforms": [
+        "YouTube",
+        "Instagram",
+        "Facebook",
+        "LinkedIn"
+      ]
+    },
+    "requiredAssets": [
+      "verified avatar/voice",
+      "real screen recording",
+      "timed captions",
+      "reviewed thumbnail"
+    ],
+    "publishBlocked": true
+  },
+  {
+    "id": "founder-tutorial",
+    "status": "draft",
+    "targetDate": "2026-11-02",
+    "format": "tutorial",
+    "title": "Build your first founder workflow with LIV8 AI",
+    "description": "Long-form tutorial: offer, personal onboarding, sales tracking, challenge and CRM validation. HighLevel portion remains blocked until real account setup is verified.\n\nExplore the LIV8 AI Founder’s Launchpad: https://www.liv8ai.com/launchpad\nOfficial source: https://help.gohighlevel.com/support/solutions/articles/155000006652-ai-product\nSales milestones are learning goals. No earnings are guaranteed.\n\nBefore publication: add all applicable material-connection disclosures at the beginning; use an exact approved paid referral URL only after eligibility and relationship review.",
+    "youtube": {
+      "visibility": "private",
+      "tags": [
+        "LIV8 AI",
+        "AI founders",
+        "LevelUp 2026",
+        "business workflows"
+      ]
+    },
+    "social": {
+      "status": "draft",
+      "caption": "Build your first founder workflow with LIV8 AI. Learn the workflow, check the source, and take one practical next step. https://www.liv8ai.com/launchpad?utm_source=social&utm_medium=organic&utm_campaign=levelup2026",
+      "platforms": [
+        "YouTube",
+        "Instagram",
+        "Facebook",
+        "LinkedIn"
+      ]
+    },
+    "requiredAssets": [
+      "verified avatar/voice",
+      "real screen recording",
+      "timed captions",
+      "reviewed thumbnail"
+    ],
+    "publishBlocked": true
+  },
+  {
+    "id": "pricing-article",
+    "status": "draft",
+    "targetDate": "2026-11-03",
+    "format": "article",
+    "title": "HighLevel AI after LevelUp 2026: what founders should verify",
+    "description": "SEO article draft with public primary sources and explicit account-scope distinctions.\n\nExplore the LIV8 AI Founder’s Launchpad: https://www.liv8ai.com/launchpad\nOfficial source: https://help.gohighlevel.com/support/solutions/articles/155000006652-ai-product\nSales milestones are learning goals. No earnings are guaranteed.\n\nBefore publication: add all applicable material-connection disclosures at the beginning; use an exact approved paid referral URL only after eligibility and relationship review.",
+    "youtube": {
+      "visibility": "private",
+      "tags": [
+        "LIV8 AI",
+        "AI founders",
+        "LevelUp 2026",
+        "business workflows"
+      ]
+    },
+    "social": {
+      "status": "draft",
+      "caption": "HighLevel AI after LevelUp 2026: what founders should verify. Learn the workflow, check the source, and take one practical next step. https://www.liv8ai.com/launchpad?utm_source=social&utm_medium=organic&utm_campaign=levelup2026",
+      "platforms": [
+        "YouTube",
+        "Instagram",
+        "Facebook",
+        "LinkedIn"
+      ]
+    },
+    "requiredAssets": [
+      "verified avatar/voice",
+      "real screen recording",
+      "timed captions",
+      "reviewed thumbnail"
+    ],
+    "publishBlocked": true
+  }
+]
