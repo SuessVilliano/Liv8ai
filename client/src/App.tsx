@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -17,9 +18,24 @@ import FormSubmitted from "@/pages/form-submitted";
 import ExitPopup from "@/components/exit-popup";
 import { useExitPopup } from "@/hooks/use-exit-popup";
 
+
+const Editorial = lazy(() => import('@/pages/editorial'));
+const Launchpad = lazy(() => import('@/pages/launchpad'));
+const lpPage = (name: 'Onboarding'|'Login'|'Workspace'|'Library'|'Community'|'LevelUp'|'Privacy') => lazy(() => import('@/pages/launchpad').then(m=>({default:m[name]})));
+const LPOnboarding=lpPage('Onboarding'), LPLogin=lpPage('Login'), LPWorkspace=lpPage('Workspace'), LPLibrary=lpPage('Library'), LPCommunity=lpPage('Community'), LPLevelUp=lpPage('LevelUp'), LPPrivacy=lpPage('Privacy');
+
 function Router() {
   return (
-    <Switch>
+    <Suspense fallback={<div role="status" className="p-8">Loading LIV8 AI…</div>}><Switch>
+      <Route path="/launchpad" component={Launchpad} />
+      <Route path="/launchpad/editorial" component={Editorial} />
+      <Route path="/launchpad/onboarding" component={LPOnboarding} />
+      <Route path="/launchpad/login" component={LPLogin} />
+      <Route path="/launchpad/workspace" component={LPWorkspace} />
+      <Route path="/launchpad/library" component={LPLibrary} />
+      <Route path="/launchpad/community" component={LPCommunity} />
+      <Route path="/launchpad/levelup-2026" component={LPLevelUp} />
+      <Route path="/launchpad/privacy" component={LPPrivacy} />
       <Route path="/" component={Home} />
       <Route path="/home" component={Home} />
       <Route path="/book-a-call" component={BookACall} />
@@ -31,7 +47,7 @@ function Router() {
       <Route path="/thank-you" component={ThankYou} />
       <Route path="/appointment-confirmed" component={AppointmentConfirmed} />
       <Route path="/form-submitted" component={FormSubmitted} />
-    </Switch>
+    </Switch></Suspense>
   );
 }
 

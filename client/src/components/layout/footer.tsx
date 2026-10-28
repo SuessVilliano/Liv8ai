@@ -68,6 +68,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
+              <li><Link href="/launchpad" className="text-muted-foreground hover:text-primary transition-colors">Founder’s Launchpad</Link></li>
               {[
                 { label: "Home", id: "home" },
                 { label: "About", id: "about" },
