@@ -16,12 +16,12 @@ function admin(req:Request){const expected=process.env.LAUNCHPAD_ADMIN_TOKEN;con
 async function rate(req:Request,bucket:string,max=20){const ip=req.socket.remoteAddress||'unknown';const key=hash(`${bucket}:${ip}`);const rows=await query("INSERT INTO lp_rate_limits(key,hits,expires_at) VALUES($1,1,now()+interval '15 minutes') ON CONFLICT(key) DO UPDATE SET hits=CASE WHEN lp_rate_limits.expires_at<now() THEN 1 ELSE lp_rate_limits.hits+1 END,expires_at=CASE WHEN lp_rate_limits.expires_at<now() THEN now()+interval '15 minutes' ELSE lp_rate_limits.expires_at END RETURNING hits",[key]);return rows[0].hits<=max;}
 export function registerLaunchpadRoutes(app:Express){
  const root='/api/launchpad';
- app.get(root+'/status',(_req,res)=>res.set('Cache-Control','no-store').json({accounts:!!process.env.DATABASE_URL,crm:!!(process.env.GHL_API_KEY&&process.env.GHL_LOCATION_ID),version:1}));
+ app.get(root+'/status',(_req,res)=>res.set('Cache-Control','no-store').json({accounts:!!process.env.DATABASE_URL&&process.env.LAUNCHPAD_ACCOUNTS_ENABLED==='true',crm:!!(process.env.GHL_API_KEY&&process.env.GHL_LOCATION_ID),version:1}));
  app.use(root,(req,res,next)=>{res.set('Cache-Control','no-store');if(!['GET','HEAD','OPTIONS'].includes(req.method)){
   const origin=req.headers.origin;const allowed=process.env.LAUNCHPAD_ORIGIN||'https://www.liv8ai.com';
   if(origin&&origin!==allowed&&!(process.env.NODE_ENV!=='production'&&/^http:\/\/localhost:\d+$/.test(origin)))return res.status(403).json({message:'Request origin is not allowed'});
  }
- if(!process.env.DATABASE_URL)return res.status(503).json({message:'Member services are not connected yet. Use the personal workspace or contact LIV8 AI.'});next();});
+ if(!process.env.DATABASE_URL||process.env.LAUNCHPAD_ACCOUNTS_ENABLED!=='true')return res.status(503).json({message:'Member services are not connected yet. Use the personal workspace or contact LIV8 AI.'});next();});
  app.post(root+'/register',wrap(async(req,res)=>{
   const parsed=registrationSchema.safeParse(req.body);if(!parsed.success)return res.status(400).json({message:'Provide a valid email, a password of 12–128 characters, and your founder profile.'});
   if(!await rate(req,'register',5))return res.status(429).json({message:'Please try again later.'});
@@ -41,7 +41,7 @@ export function registerLaunchpadRoutes(app:Express){
  }));
  app.post(root+'/logout',wrap(async(req,res)=>{const t=token(req);if(t)await query('DELETE FROM lp_sessions WHERE token_hash=$1',[hash(t)]);res.clearCookie('lp_session',{path:root});res.json({ok:true});}));
  app.use(root+'/admin',(req,res,next)=>admin(req)?next():res.status(401).json({message:'Operator authorization required'}));
- app.get(root+'/admin/analytics',wrap(async(_req,res)=>{const [members,sales,pending,referrals]=await Promise.all([query('SELECT count(*)::int AS count FROM lp_members'),query('SELECT count(*)::int AS count FROM lp_sales'),query("SELECT count(*)::int AS count FROM lp_outbox WHERE status!='sent'"),query('SELECT count(*)::int AS count FROM lp_members WHERE referred_by IS NOT NULL')]);res.json({members:members[0].count,selfReportedSales:sales[0].count,pendingCrmEvents:pending[0].count,referredSignups:referrals[0].count});}));
+ app.get(root+'/admin/analytics',wrap(async(_req,res)=>{const [members,sales,pending,referrals]=await Promise.all([query('SELECT count(*)::int AS count FROM lp_members'),query('SELECT count(*)::int AS count FROM lp_sales'),query("SELECT count(*)::int AS count FROM lp_outbox WHERE status!='sent'"),query('SELECT count(*)::int AS count FROM lp_members WHERE referred_by IS NOT NULL')]);const sources=await query("SELECT coalesce(attribution->>'source','direct') AS source,coalesce(attribution->>'campaign','none') AS campaign,count(*)::int AS signups FROM lp_members GROUP BY 1,2 ORDER BY signups DESC LIMIT 50");res.json({members:members[0].count,selfReportedSales:sales[0].count,pendingCrmEvents:pending[0].count,referredSignups:referrals[0].count,sources});}));
  app.get(root+'/admin/announcements',wrap(async(_req,res)=>res.json(await query('SELECT * FROM lp_announcements ORDER BY created_at DESC LIMIT 100'))));
  app.post(root+'/admin/announcements',wrap(async(req,res)=>{const a=announcementSchema.safeParse(req.body);if(!a.success)return res.status(400).json({message:'Valid announcement and official source required'});const id=randomUUID();await query('INSERT INTO lp_announcements(id,title,source_url,availability,summary) VALUES($1,$2,$3,$4,$5)',[id,a.data.title,a.data.sourceUrl,a.data.availability,a.data.summary]);res.status(201).json({id,status:'draft'});}));
  app.patch(root+'/admin/announcements/:id',wrap(async(req,res)=>{

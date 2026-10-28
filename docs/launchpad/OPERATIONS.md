@@ -21,6 +21,7 @@ The existing Vercel project has no DATABASE_URL or GHL credentials configured as
 
 Set these in the existing project's protected server environment, never in client variables or git:
 
+- `LAUNCHPAD_ACCOUNTS_ENABLED`: keep `false` until migration, account security and integration tests pass; set `true` only for the validated release.
 - `DATABASE_URL`: compatible Neon/Postgres endpoint. Run `npm run launchpad:migrate` against the intended database before enabling traffic. Migration adds only `lp_*` tables.
 - `LAUNCHPAD_ORIGIN`: exact allowed browser origin, normally `https://www.liv8ai.com`.
 - `LAUNCHPAD_ADMIN_TOKEN`: random token of at least 32 characters for moderation, analytics, intake review and explicit CRM sync. It is not stored by the editorial UI.
@@ -85,3 +86,5 @@ Preview testing exposed the repository's existing cleanUrls/rewrite mismatch: a 
 Browser QA confirmed personal onboarding, offer rendering, paid-sale logging, the first milestone and a challenge completion. The global exit popup is suppressed only inside `/launchpad` so it does not interrupt the product; existing pages keep the popup.
 
 The first routed API invocation also exposed an existing Node ESM import problem (`server/routes` lacked a runtime extension). Server entrypoint imports now use `.js` ESM specifiers, with TypeScript resolving the corresponding source files. The unused memory-storage import was removed from route registration. The CRM adapter does not change a contact's global DND or imply SMS permission.
+
+Analytics emits only non-identifying Launchpad page/action names into the existing GTM dataLayer. Profile text, email addresses, sale labels and tokens are excluded. Operator analytics adds source/campaign signup counts when member services are enabled. Delivery into external analytics dashboards still requires validation of the existing GTM container configuration.
