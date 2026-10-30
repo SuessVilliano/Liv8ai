@@ -38,7 +38,7 @@ export async function provisionHighLevelLocation(
     method: "POST",
     headers: {
       Authorization: `Bearer ${opts.token}`,
-      Version: "2021-07-28",
+      Version: "v3",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
